@@ -2289,6 +2289,14 @@ html.no-js .reveal { opacity: 1 !important; transform: none !important; }
 
 /* Çok dar ekranlarda dahi 2x2 düzen korunur (grid-cols-2 HTML sınıfı) */
 
+/* 330px civarı ekranlarda taşmayı önle */
+@media (max-width: 340px) {
+  .parallax-y { aspect-ratio: auto !important; }
+  .hero-metrics-grid { padding: 8px !important; gap: 6px !important; }
+  .hero-metrics-grid .hero-card-content { padding: 10px; }
+  .hero-metrics-grid .hero-card-progress { height: 3px; margin-bottom: 3px; }
+}
+
 /* Genel mobil uyumluluk iyileştirmeleri */
 img, video, canvas, svg { max-width: 100%; height: auto; }
 
