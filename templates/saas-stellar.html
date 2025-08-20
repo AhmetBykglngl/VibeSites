@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SaaS Stellar — Önizleme</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://unpkg.com/@studio-freight/lenis@1.0.33/bundled/lenis.min.js"></script>
+</head>
+<body class="min-h-screen bg-slate-950 text-slate-100 font-[Inter] antialiased">
+  <!-- Header -->
+  <header class="sticky top-0 z-50 border-b border-white/10 bg-slate-900/80 backdrop-blur">
+    <div class="mx-auto max-w-7xl px-6 py-4">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-500 to-emerald-600"></div>
+          <span class="text-lg font-semibold tracking-tight">SaaS Stellar</span>
+        </div>
+        <div class="flex items-center gap-6">
+          <nav class="hidden md:flex items-center gap-6 text-sm">
+            <a href="#home" class="hover:text-white transition-colors">Ana Sayfa</a>
+            <a href="#features" class="hover:text-white transition-colors">Özellikler</a>
+            <a href="#pricing" class="hover:text-white transition-colors">Fiyatlar</a>
+            <a href="#docs" class="hover:text-white transition-colors">Dokümantasyon</a>
+          </nav>
+          <div class="flex items-center gap-4">
+            <a href="#login" class="text-sm hover:text-white transition-colors">Giriş Yap</a>
+            <a href="#pricing" class="px-4 py-2 rounded-lg bg-gradient-to-r from-indigo-500 to-emerald-600 text-white font-medium hover:shadow-lg transition-all">
+              Ücretsiz Dene
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative overflow-hidden py-20">
+    <div class="absolute inset-0 bg-gradient-to-br from-indigo-500/10 via-emerald-500/5 to-transparent"></div>
+    <div class="relative mx-auto max-w-7xl px-6">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <h1 class="text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
+            SaaS Çözümü
+            <span class="bg-gradient-to-r from-indigo-400 to-emerald-400 bg-clip-text text-transparent">Stellar</span>
+          </h1>
+          <p class="text-xl text-slate-300 max-w-2xl mb-8">
+            Ürün özellikleri, fiyat tabloları ve CTA odaklı dönüşüm tüneli ile işletmenizi büyütün.
+          </p>
+          <div class="flex flex-wrap gap-4">
+            <button class="px-8 py-4 rounded-xl bg-gradient-to-r from-indigo-500 to-emerald-600 text-white font-semibold hover:shadow-xl transition-all transform hover:-translate-y-1">
+              14 Gün Ücretsiz Dene
+            </button>
+            <button class="px-8 py-4 rounded-xl border border-white/20 text-white font-semibold hover:bg-white/5 transition-all">
+              Demo İzle
+            </button>
+          </div>
+          <div class="mt-8 flex items-center gap-6 text-sm text-slate-300">
+            <div class="flex items-center gap-2">
+              <span class="w-2 h-2 bg-green-400 rounded-full"></span>
+              <span>Kredi kartı gerekmez</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="w-2 h-2 bg-green-400 rounded-full"></span>
+              <span>Anında başlayın</span>
+            </div>
+          </div>
+        </div>
+        <div class="relative">
+          <div class="aspect-square rounded-2xl bg-gradient-to-br from-slate-800 to-slate-900 border border-white/10 p-8">
+            <div class="grid grid-cols-2 gap-4 h-full">
+              <div class="bg-gradient-to-br from-indigo-500/20 to-purple-500/20 rounded-xl p-4 flex items-center justify-center">
+                <span class="text-2xl">📊</span>
+              </div>
+              <div class="bg-gradient-to-br from-emerald-500/20 to-blue-500/20 rounded-xl p-4 flex items-center justify-center">
+                <span class="text-2xl">⚡</span>
+              </div>
+              <div class="bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-xl p-4 flex items-center justify-center">
+                <span class="text-2xl">🔒</span>
+              </div>
+              <div class="bg-gradient-to-br from-orange-500/20 to-red-500/20 rounded-xl p-4 flex items-center justify-center">
+                <span class="text-2xl">🚀</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section id="features" class="py-20 bg-slate-900/50">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold mb-4">Güçlü Özellikler</h2>
+        <p class="text-xl text-slate-300 max-w-3xl mx-auto">
+          İşletmenizi büyüten araçlar ve özellikler
+        </p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="group p-8 rounded-2xl border border-white/10 bg-slate-800/50 hover:border-indigo-500/30 transition-all duration-300 hover:transform hover:-translate-y-2">
+          <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center mb-6">
+            <span class="text-2xl">📈</span>
+          </div>
+          <h3 class="text-xl font-semibold mb-4">Analitik & Raporlama</h3>
+          <p class="text-slate-300">Detaylı analitik ve raporlama araçları ile performansınızı takip edin.</p>
+        </div>
+        <div class="group p-8 rounded-2xl border border-white/10 bg-slate-800/50 hover:border-emerald-500/30 transition-all duration-300 hover:transform hover:-translate-y-2">
+          <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-emerald-500 to-blue-600 flex items-center justify-center mb-6">
+            <span class="text-2xl">🔒</span>
+          </div>
+          <h3 class="text-xl font-semibold mb-4">Güvenlik & Uyumluluk</h3>
+          <p class="text-slate-300">En yüksek güvenlik standartları ve GDPR uyumluluğu.</p>
+        </div>
+        <div class="group p-8 rounded-2xl border border-white/10 bg-slate-800/50 hover:border-purple-500/30 transition-all duration-300 hover:transform hover:-translate-y-2">
+          <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500 to-pink-600 flex items-center justify-center mb-6">
+            <span class="text-2xl">⚡</span>
+          </div>
+          <h3 class="text-xl font-semibold mb-4">Hızlı Entegrasyon</h3>
+          <p class="text-slate-300">Mevcut sistemlerinizle kolayca entegre olun.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Section -->
+  <section id="pricing" class="py-20">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold mb-4">Şeffaf Fiyatlandırma</h2>
+        <p class="text-xl text-slate-300 max-w-3xl mx-auto">
+          İhtiyacınıza uygun planı seçin, istediğiniz zaman değiştirin
+        </p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <!-- Starter Plan -->
+        <div class="relative p-8 rounded-2xl border border-white/10 bg-slate-800/50">
+          <div class="text-center mb-8">
+            <h3 class="text-2xl font-bold mb-2">Starter</h3>
+            <div class="text-4xl font-bold text-indigo-400 mb-2">₺99<span class="text-lg text-slate-300">/ay</span></div>
+            <p class="text-slate-300">Küçük ekipler için ideal</p>
+          </div>
+          <ul class="space-y-4 mb-8">
+            <li class="flex items-center gap-3">
+              <span class="text-green-400">✓</span>
+              <span class="text-slate-300">5 kullanıcı</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="text-green-400">✓</span>
+              <span class="text-slate-300">Temel analitik</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="text-green-400">✓</span>
+              <span class="text-slate-300">E-posta desteği</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="text-green-400">✓</span>
+              <span class="text-slate-300">API erişimi</span>
+            </li>
+          </ul>
+          <button class="w-full py-3 rounded-lg border border-white/20 text-white font-semibold hover:bg-white/5 transition-all">
+            Başla
+          </button>
+        </div>
+
+        <!-- Pro Plan -->
+        <div class="relative p-8 rounded-2xl border-2 border-indigo-500/50 bg-slate-800/50 transform scale-105">
+          <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
+            <span class="px-4 py-1 bg-gradient-to-r from-indigo-500 to-emerald-600 text-white text-sm rounded-full">Popüler</span>
+          </div>
+          <div class="text-center mb-8">
+            <h3 class="text-2xl font-bold mb-2">Pro</h3>
+            <div class="text-4xl font-bold text-indigo-400 mb-2">₺299<span class="text-lg text-slate-300">/ay</span></div>
+            <p class="text-slate-300">Büyüyen işletmeler için</p>
+          </div>
+          <ul class="space-y-4 mb-8">
+            <li class="flex items-center gap-3">
+              <span class="text-green-400">✓</span>
+              <span class="text-slate-300">25 kullanıcı</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="text-green-400">✓</span>
+              <span class="text-slate-300">Gelişmiş analitik</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="text-green-400">✓</span>
+              <span class="text-slate-300">Öncelikli destek</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="text-green-400">✓</span>
+              <span class="text-slate-300">Özel entegrasyonlar</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="text-green-400">✓</span>
+              <span class="text-slate-300">SSO desteği</span>
+            </li>
+          </ul>
+          <button class="w-full py-3 rounded-lg bg-gradient-to-r from-indigo-500 to-emerald-600 text-white font-semibold hover:shadow-lg transition-all">
+            Başla
+          </button>
+        </div>
+
+        <!-- Enterprise Plan -->
+        <div class="relative p-8 rounded-2xl border border-white/10 bg-slate-800/50">
+          <div class="text-center mb-8">
+            <h3 class="text-2xl font-bold mb-2">Enterprise</h3>
+            <div class="text-4xl font-bold text-indigo-400 mb-2">Özel</div>
+            <p class="text-slate-300">Büyük organizasyonlar için</p>
+          </div>
+          <ul class="space-y-4 mb-8">
+            <li class="flex items-center gap-3">
+              <span class="text-green-400">✓</span>
+              <span class="text-slate-300">Sınırsız kullanıcı</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="text-green-400">✓</span>
+              <span class="text-slate-300">Özel raporlama</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="text-green-400">✓</span>
+              <span class="text-slate-300">7/24 destek</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="text-green-400">✓</span>
+              <span class="text-slate-300">On-premise seçeneği</span>
+            </li>
+          </ul>
+          <button class="w-full py-3 rounded-lg border border-white/20 text-white font-semibold hover:bg-white/5 transition-all">
+            İletişime Geç
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-20 bg-slate-900/50">
+    <div class="mx-auto max-w-4xl px-6 text-center">
+      <h2 class="text-4xl font-bold mb-4">Hemen Başlayın</h2>
+      <p class="text-xl text-slate-300 mb-8">
+        14 gün ücretsiz deneme ile tüm özellikleri keşfedin. Kredi kartı gerekmez.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <button class="px-8 py-4 rounded-xl bg-gradient-to-r from-indigo-500 to-emerald-600 text-white font-semibold hover:shadow-xl transition-all transform hover:-translate-y-1">
+          Ücretsiz Deneme Başlat
+        </button>
+        <button class="px-8 py-4 rounded-xl border border-white/20 text-white font-semibold hover:bg-white/5 transition-all">
+          Demo İzle
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Smooth scroll
+    const lenis = new Lenis({ duration: 1.2, smoothWheel: true });
+    function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
+    requestAnimationFrame(raf);
+
+    // GSAP animations
+    gsap.from("header", { y: -50, opacity: 0, duration: 1 });
+    gsap.from("h1", { y: 50, opacity: 0, duration: 1, delay: 0.2 });
+    gsap.from(".group", { y: 30, opacity: 0, duration: 0.8, delay: 0.4, stagger: 0.1 });
+  </script>
+</body>
+</html>
+
+

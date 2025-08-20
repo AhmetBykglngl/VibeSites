@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Blog Atlas — Önizleme</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://unpkg.com/@studio-freight/lenis@1.0.33/bundled/lenis.min.js"></script>
+</head>
+<body class="min-h-screen bg-slate-950 text-slate-100 font-[Inter] antialiased">
+  <!-- Header -->
+  <header class="sticky top-0 z-50 border-b border-white/10 bg-slate-900/80 backdrop-blur">
+    <div class="mx-auto max-w-7xl px-6 py-4">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-purple-500 to-blue-600"></div>
+          <span class="text-lg font-semibold tracking-tight">Blog Atlas</span>
+        </div>
+        <div class="flex items-center gap-6">
+          <nav class="hidden md:flex items-center gap-6 text-sm">
+            <a href="#home" class="hover:text-white transition-colors">Ana Sayfa</a>
+            <a href="#articles" class="hover:text-white transition-colors">Makaleler</a>
+            <a href="#categories" class="hover:text-white transition-colors">Kategoriler</a>
+            <a href="#about" class="hover:text-white transition-colors">Hakkında</a>
+          </nav>
+          <div class="flex items-center gap-4">
+            <div class="relative">
+              <input type="text" placeholder="Ara..." class="w-64 px-4 py-2 rounded-lg bg-slate-800 border border-white/10 text-white placeholder-slate-400 focus:border-purple-500 focus:outline-none transition-colors">
+              <button class="absolute right-3 top-1/2 transform -translate-y-1/2 text-slate-400 hover:text-white">
+                🔍
+              </button>
+            </div>
+            <button class="px-4 py-2 rounded-lg bg-gradient-to-r from-purple-500 to-blue-600 text-white font-medium hover:shadow-lg transition-all">
+              Abone Ol
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative overflow-hidden py-20">
+    <div class="absolute inset-0 bg-gradient-to-br from-purple-500/10 via-blue-500/5 to-transparent"></div>
+    <div class="relative mx-auto max-w-4xl px-6 text-center">
+      <h1 class="text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
+        Okunabilirlik Odaklı
+        <span class="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">Blog Tasarımı</span>
+      </h1>
+      <p class="text-xl text-slate-300 max-w-3xl mx-auto mb-8">
+        Tipografi, satır uzunluğu ve kontrast ile keyifli okuma deneyimi. İçerikleri kolayca filtreleyin ve keşfedilebilirliği artırın.
+      </p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <button class="px-8 py-4 rounded-xl bg-gradient-to-r from-purple-500 to-blue-600 text-white font-semibold hover:shadow-xl transition-all transform hover:-translate-y-1">
+          Makaleleri Keşfet
+        </button>
+        <button class="px-8 py-4 rounded-xl border border-white/20 text-white font-semibold hover:bg-white/5 transition-all">
+          Kategoriler
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Categories Section -->
+  <section class="py-8 border-b border-white/10">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="flex flex-wrap items-center gap-4">
+        <span class="text-sm font-medium text-slate-300">Kategoriler:</span>
+        <button class="px-4 py-2 rounded-lg bg-gradient-to-r from-purple-500 to-blue-600 text-white text-sm font-medium">Tümü</button>
+        <button class="px-4 py-2 rounded-lg bg-slate-800 text-slate-300 text-sm font-medium hover:bg-slate-700 transition-colors">Teknoloji</button>
+        <button class="px-4 py-2 rounded-lg bg-slate-800 text-slate-300 text-sm font-medium hover:bg-slate-700 transition-colors">Tasarım</button>
+        <button class="px-4 py-2 rounded-lg bg-slate-800 text-slate-300 text-sm font-medium hover:bg-slate-700 transition-colors">Geliştirme</button>
+        <button class="px-4 py-2 rounded-lg bg-slate-800 text-slate-300 text-sm font-medium hover:bg-slate-700 transition-colors">İş Dünyası</button>
+        <button class="px-4 py-2 rounded-lg bg-slate-800 text-slate-300 text-sm font-medium hover:bg-slate-700 transition-colors">Yaşam</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Article -->
+  <section class="py-16">
+    <div class="mx-auto max-w-4xl px-6">
+      <div class="bg-slate-800/50 rounded-2xl border border-white/10 overflow-hidden">
+        <div class="aspect-[16/9] bg-gradient-to-br from-purple-500/20 to-blue-500/20 relative">
+          <div class="absolute inset-0 flex items-center justify-center">
+            <span class="text-8xl">📚</span>
+          </div>
+          <div class="absolute top-4 left-4">
+            <span class="px-3 py-1 bg-purple-500 text-white text-sm rounded-lg">Öne Çıkan</span>
+          </div>
+        </div>
+        <div class="p-8">
+          <div class="flex items-center gap-4 text-sm text-slate-400 mb-4">
+            <span>Teknoloji</span>
+            <span>•</span>
+            <span>5 dk okuma</span>
+            <span>•</span>
+            <span>2 gün önce</span>
+          </div>
+          <h2 class="text-3xl font-bold mb-4">Modern Web Geliştirme Trendleri 2024</h2>
+          <p class="text-slate-300 text-lg leading-relaxed mb-6">
+            Bu yılın en önemli web geliştirme trendlerini keşfedin. Performans, güvenlik ve kullanıcı deneyimi odaklı yaklaşımlar ile geleceğe hazır olun.
+          </p>
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full bg-gradient-to-br from-purple-500 to-blue-600"></div>
+              <div>
+                <div class="font-medium">Ahmet Yılmaz</div>
+                <div class="text-sm text-slate-400">Yazılım Geliştirici</div>
+              </div>
+            </div>
+            <button class="px-6 py-3 bg-gradient-to-r from-purple-500 to-blue-600 text-white rounded-lg font-medium hover:shadow-lg transition-all">
+              Devamını Oku
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Articles Grid -->
+  <section id="articles" class="py-16">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Article 1 -->
+        <article class="group bg-slate-800/50 rounded-2xl border border-white/10 overflow-hidden hover:border-purple-500/30 transition-all duration-300 hover:transform hover:-translate-y-2">
+          <div class="aspect-[16/9] bg-gradient-to-br from-green-500/20 to-blue-500/20 relative">
+            <div class="absolute inset-0 flex items-center justify-center">
+              <span class="text-4xl">🎨</span>
+            </div>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center gap-4 text-sm text-slate-400 mb-3">
+              <span>Tasarım</span>
+              <span>•</span>
+              <span>3 dk okuma</span>
+            </div>
+            <h3 class="text-xl font-bold mb-3 group-hover:text-purple-300 transition-colors">
+              UI/UX Tasarımında Renk Psikolojisi
+            </h3>
+            <p class="text-slate-300 text-sm mb-4 leading-relaxed">
+              Renklerin kullanıcı davranışları üzerindeki etkisini ve tasarımda nasıl kullanılacağını öğrenin.
+            </p>
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-2">
+                <div class="w-6 h-6 rounded-full bg-gradient-to-br from-green-500 to-blue-600"></div>
+                <span class="text-sm text-slate-400">Zeynep Kaya</span>
+              </div>
+              <span class="text-xs text-slate-400">1 hafta önce</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Article 2 -->
+        <article class="group bg-slate-800/50 rounded-2xl border border-white/10 overflow-hidden hover:border-purple-500/30 transition-all duration-300 hover:transform hover:-translate-y-2">
+          <div class="aspect-[16/9] bg-gradient-to-br from-orange-500/20 to-red-500/20 relative">
+            <div class="absolute inset-0 flex items-center justify-center">
+              <span class="text-4xl">💼</span>
+            </div>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center gap-4 text-sm text-slate-400 mb-3">
+              <span>İş Dünyası</span>
+              <span>•</span>
+              <span>7 dk okuma</span>
+            </div>
+            <h3 class="text-xl font-bold mb-3 group-hover:text-purple-300 transition-colors">
+              Startup'lar İçin Pazarlama Stratejileri
+            </h3>
+            <p class="text-slate-300 text-sm mb-4 leading-relaxed">
+              Sınırlı bütçe ile maksimum etki yaratmanın yollarını ve dijital pazarlama taktiklerini keşfedin.
+            </p>
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-2">
+                <div class="w-6 h-6 rounded-full bg-gradient-to-br from-orange-500 to-red-600"></div>
+                <span class="text-sm text-slate-400">Mehmet Demir</span>
+              </div>
+              <span class="text-xs text-slate-400">3 gün önce</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Article 3 -->
+        <article class="group bg-slate-800/50 rounded-2xl border border-white/10 overflow-hidden hover:border-purple-500/30 transition-all duration-300 hover:transform hover:-translate-y-2">
+          <div class="aspect-[16/9] bg-gradient-to-br from-purple-500/20 to-pink-500/20 relative">
+            <div class="absolute inset-0 flex items-center justify-center">
+              <span class="text-4xl">🚀</span>
+            </div>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center gap-4 text-sm text-slate-400 mb-3">
+              <span>Geliştirme</span>
+              <span>•</span>
+              <span>4 dk okuma</span>
+            </div>
+            <h3 class="text-xl font-bold mb-3 group-hover:text-purple-300 transition-colors">
+              React Performance Optimizasyonu
+            </h3>
+            <p class="text-slate-300 text-sm mb-4 leading-relaxed">
+              React uygulamalarınızı hızlandırmanın yollarını ve performans optimizasyon tekniklerini öğrenin.
+            </p>
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-2">
+                <div class="w-6 h-6 rounded-full bg-gradient-to-br from-purple-500 to-pink-600"></div>
+                <span class="text-sm text-slate-400">Ayşe Özkan</span>
+              </div>
+              <span class="text-xs text-slate-400">5 gün önce</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Article 4 -->
+        <article class="group bg-slate-800/50 rounded-2xl border border-white/10 overflow-hidden hover:border-purple-500/30 transition-all duration-300 hover:transform hover:-translate-y-2">
+          <div class="aspect-[16/9] bg-gradient-to-br from-blue-500/20 to-cyan-500/20 relative">
+            <div class="absolute inset-0 flex items-center justify-center">
+              <span class="text-4xl">🧠</span>
+            </div>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center gap-4 text-sm text-slate-400 mb-3">
+              <span>Teknoloji</span>
+              <span>•</span>
+              <span>6 dk okuma</span>
+            </div>
+            <h3 class="text-xl font-bold mb-3 group-hover:text-purple-300 transition-colors">
+              Yapay Zeka ve Geleceğimiz
+            </h3>
+            <p class="text-slate-300 text-sm mb-4 leading-relaxed">
+              AI teknolojilerinin günlük hayatımıza etkilerini ve gelecekte bizi bekleyen değişimleri inceleyin.
+            </p>
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-2">
+                <div class="w-6 h-6 rounded-full bg-gradient-to-br from-blue-500 to-cyan-600"></div>
+                <span class="text-sm text-slate-400">Can Yıldız</span>
+              </div>
+              <span class="text-xs text-slate-400">1 hafta önce</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Article 5 -->
+        <article class="group bg-slate-800/50 rounded-2xl border border-white/10 overflow-hidden hover:border-purple-500/30 transition-all duration-300 hover:transform hover:-translate-y-2">
+          <div class="aspect-[16/9] bg-gradient-to-br from-yellow-500/20 to-orange-500/20 relative">
+            <div class="absolute inset-0 flex items-center justify-center">
+              <span class="text-4xl">🌱</span>
+            </div>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center gap-4 text-sm text-slate-400 mb-3">
+              <span>Yaşam</span>
+              <span>•</span>
+              <span>5 dk okuma</span>
+            </div>
+            <h3 class="text-xl font-bold mb-3 group-hover:text-purple-300 transition-colors">
+              Sürdürülebilir Yaşam Tarzı
+            </h3>
+            <p class="text-slate-300 text-sm mb-4 leading-relaxed">
+              Çevre dostu alışkanlıklar geliştirmenin yollarını ve sürdürülebilir yaşamın önemini keşfedin.
+            </p>
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-2">
+                <div class="w-6 h-6 rounded-full bg-gradient-to-br from-yellow-500 to-orange-600"></div>
+                <span class="text-sm text-slate-400">Elif Arslan</span>
+              </div>
+              <span class="text-xs text-slate-400">2 gün önce</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Article 6 -->
+        <article class="group bg-slate-800/50 rounded-2xl border border-white/10 overflow-hidden hover:border-purple-500/30 transition-all duration-300 hover:transform hover:-translate-y-2">
+          <div class="aspect-[16/9] bg-gradient-to-br from-pink-500/20 to-purple-500/20 relative">
+            <div class="absolute inset-0 flex items-center justify-center">
+              <span class="text-4xl">📱</span>
+            </div>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center gap-4 text-sm text-slate-400 mb-3">
+              <span>Geliştirme</span>
+              <span>•</span>
+              <span>4 dk okuma</span>
+            </div>
+            <h3 class="text-xl font-bold mb-3 group-hover:text-purple-300 transition-colors">
+              Mobil Uygulama Tasarım Prensipleri
+            </h3>
+            <p class="text-slate-300 text-sm mb-4 leading-relaxed">
+              Kullanıcı dostu mobil uygulama tasarımının temel prensiplerini ve en iyi uygulamaları öğrenin.
+            </p>
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-2">
+                <div class="w-6 h-6 rounded-full bg-gradient-to-br from-pink-500 to-purple-600"></div>
+                <span class="text-sm text-slate-400">Burak Şahin</span>
+              </div>
+              <span class="text-xs text-slate-400">4 gün önce</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter Section -->
+  <section class="py-20 bg-slate-900/50">
+    <div class="mx-auto max-w-4xl px-6 text-center">
+      <h2 class="text-3xl font-bold mb-4">Güncel Kalın</h2>
+      <p class="text-slate-300 mb-8">En yeni makaleler ve güncellemeler için e-posta listemize katılın</p>
+      <div class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+        <input type="email" placeholder="E-posta adresiniz" class="flex-1 px-4 py-3 rounded-lg bg-slate-700 border border-white/10 text-white focus:border-purple-500 focus:outline-none transition-colors">
+        <button class="px-6 py-3 bg-gradient-to-r from-purple-500 to-blue-600 text-white rounded-lg font-medium hover:shadow-lg transition-all">
+          Abone Ol
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Smooth scroll
+    const lenis = new Lenis({ duration: 1.2, smoothWheel: true });
+    function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
+    requestAnimationFrame(raf);
+
+    // GSAP animations
+    gsap.from("header", { y: -50, opacity: 0, duration: 1 });
+    gsap.from("h1", { y: 50, opacity: 0, duration: 1, delay: 0.2 });
+    gsap.from("article", { y: 30, opacity: 0, duration: 0.8, delay: 0.4, stagger: 0.1 });
+  </script>
+</body>
+</html>
+
+

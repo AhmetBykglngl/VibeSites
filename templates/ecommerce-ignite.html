@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>E‑Ticaret Ignite — Önizleme</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://unpkg.com/@studio-freight/lenis@1.0.33/bundled/lenis.min.js"></script>
+</head>
+<body class="min-h-screen bg-slate-950 text-slate-100 font-[Inter] antialiased">
+  <!-- Header -->
+  <header class="sticky top-0 z-50 border-b border-white/10 bg-slate-900/80 backdrop-blur">
+    <div class="mx-auto max-w-7xl px-6 py-4">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-green-500 to-blue-600"></div>
+          <span class="text-lg font-semibold tracking-tight">E‑Ticaret Ignite</span>
+        </div>
+        <div class="flex items-center gap-6">
+          <nav class="hidden md:flex items-center gap-6 text-sm">
+            <a href="#home" class="hover:text-white transition-colors">Ana Sayfa</a>
+            <a href="#products" class="hover:text-white transition-colors">Ürünler</a>
+            <a href="#categories" class="hover:text-white transition-colors">Kategoriler</a>
+            <a href="#about" class="hover:text-white transition-colors">Hakkımızda</a>
+          </nav>
+          <div class="flex items-center gap-4">
+            <button class="relative p-2 hover:bg-white/5 rounded-lg transition-colors">
+              <span class="text-xl">🔍</span>
+            </button>
+            <button class="relative p-2 hover:bg-white/5 rounded-lg transition-colors">
+              <span class="text-xl">❤️</span>
+            </button>
+            <button class="relative p-2 hover:bg-white/5 rounded-lg transition-colors">
+              <span class="text-xl">🛒</span>
+              <span class="absolute -top-1 -right-1 w-5 h-5 bg-red-500 text-white text-xs rounded-full flex items-center justify-center">3</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative overflow-hidden py-16">
+    <div class="absolute inset-0 bg-gradient-to-br from-green-500/10 via-blue-500/5 to-transparent"></div>
+    <div class="relative mx-auto max-w-7xl px-6">
+      <div class="text-center">
+        <h1 class="text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
+          Dönüşüm Odaklı
+          <span class="bg-gradient-to-r from-green-400 to-blue-400 bg-clip-text text-transparent">E‑Ticaret</span>
+        </h1>
+        <p class="text-xl text-slate-300 max-w-3xl mx-auto mb-8">
+          Ürün kartları, filtreler, sepet sistemi ve promosyon alanları ile maksimum satış performansı.
+        </p>
+        <div class="flex flex-wrap justify-center gap-4">
+          <button class="px-8 py-4 rounded-xl bg-gradient-to-r from-green-500 to-blue-600 text-white font-semibold hover:shadow-xl transition-all transform hover:-translate-y-1">
+            Ürünleri Keşfet
+          </button>
+          <button class="px-8 py-4 rounded-xl border border-white/20 text-white font-semibold hover:bg-white/5 transition-all">
+            Kampanyalar
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Filters Section -->
+  <section class="py-8 border-b border-white/10">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="flex flex-wrap items-center gap-4">
+        <span class="text-sm font-medium text-slate-300">Filtreler:</span>
+        <button class="px-4 py-2 rounded-lg bg-gradient-to-r from-green-500 to-blue-600 text-white text-sm font-medium">Tümü</button>
+        <button class="px-4 py-2 rounded-lg bg-slate-800 text-slate-300 text-sm font-medium hover:bg-slate-700 transition-colors">Elektronik</button>
+        <button class="px-4 py-2 rounded-lg bg-slate-800 text-slate-300 text-sm font-medium hover:bg-slate-700 transition-colors">Giyim</button>
+        <button class="px-4 py-2 rounded-lg bg-slate-800 text-slate-300 text-sm font-medium hover:bg-slate-700 transition-colors">Ev & Yaşam</button>
+        <button class="px-4 py-2 rounded-lg bg-slate-800 text-slate-300 text-sm font-medium hover:bg-slate-700 transition-colors">Spor</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products Section -->
+  <section id="products" class="py-16">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <!-- Product Card 1 -->
+        <div class="group bg-slate-800/50 rounded-2xl border border-white/10 overflow-hidden hover:border-green-500/30 transition-all duration-300 hover:transform hover:-translate-y-2">
+          <div class="relative aspect-square bg-gradient-to-br from-slate-700 to-slate-800 p-6">
+            <div class="w-full h-full bg-gradient-to-br from-green-500/20 to-blue-500/20 rounded-xl flex items-center justify-center">
+              <span class="text-4xl">📱</span>
+            </div>
+            <div class="absolute top-4 right-4">
+              <button class="w-8 h-8 bg-white/10 rounded-full flex items-center justify-center hover:bg-red-500/20 transition-colors">
+                <span class="text-sm">❤️</span>
+              </button>
+            </div>
+            <div class="absolute top-4 left-4">
+              <span class="px-2 py-1 bg-red-500 text-white text-xs rounded-lg">%20</span>
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="font-semibold text-lg mb-2">Akıllı Telefon Pro</h3>
+            <p class="text-slate-300 text-sm mb-4">En son teknoloji ile donatılmış premium akıllı telefon</p>
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-2">
+                <span class="text-2xl font-bold text-green-400">₺8.999</span>
+                <span class="text-slate-400 line-through text-sm">₺11.249</span>
+              </div>
+              <button class="px-4 py-2 bg-gradient-to-r from-green-500 to-blue-600 text-white rounded-lg text-sm font-medium hover:shadow-lg transition-all">
+                Sepete Ekle
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product Card 2 -->
+        <div class="group bg-slate-800/50 rounded-2xl border border-white/10 overflow-hidden hover:border-green-500/30 transition-all duration-300 hover:transform hover:-translate-y-2">
+          <div class="relative aspect-square bg-gradient-to-br from-slate-700 to-slate-800 p-6">
+            <div class="w-full h-full bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-xl flex items-center justify-center">
+              <span class="text-4xl">💻</span>
+            </div>
+            <div class="absolute top-4 right-4">
+              <button class="w-8 h-8 bg-white/10 rounded-full flex items-center justify-center hover:bg-red-500/20 transition-colors">
+                <span class="text-sm">❤️</span>
+              </button>
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="font-semibold text-lg mb-2">Laptop Ultra</h3>
+            <p class="text-slate-300 text-sm mb-4">Yüksek performanslı iş ve oyun laptopu</p>
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-2">
+                <span class="text-2xl font-bold text-green-400">₺24.999</span>
+              </div>
+              <button class="px-4 py-2 bg-gradient-to-r from-green-500 to-blue-600 text-white rounded-lg text-sm font-medium hover:shadow-lg transition-all">
+                Sepete Ekle
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product Card 3 -->
+        <div class="group bg-slate-800/50 rounded-2xl border border-white/10 overflow-hidden hover:border-green-500/30 transition-all duration-300 hover:transform hover:-translate-y-2">
+          <div class="relative aspect-square bg-gradient-to-br from-slate-700 to-slate-800 p-6">
+            <div class="w-full h-full bg-gradient-to-br from-orange-500/20 to-red-500/20 rounded-xl flex items-center justify-center">
+              <span class="text-4xl">🎧</span>
+            </div>
+            <div class="absolute top-4 right-4">
+              <button class="w-8 h-8 bg-white/10 rounded-full flex items-center justify-center hover:bg-red-500/20 transition-colors">
+                <span class="text-sm">❤️</span>
+              </button>
+            </div>
+            <div class="absolute top-4 left-4">
+              <span class="px-2 py-1 bg-green-500 text-white text-xs rounded-lg">Yeni</span>
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="font-semibold text-lg mb-2">Kablosuz Kulaklık</h3>
+            <p class="text-slate-300 text-sm mb-4">Aktif gürültü önleme teknolojili premium kulaklık</p>
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-2">
+                <span class="text-2xl font-bold text-green-400">₺2.499</span>
+              </div>
+              <button class="px-4 py-2 bg-gradient-to-r from-green-500 to-blue-600 text-white rounded-lg text-sm font-medium hover:shadow-lg transition-all">
+                Sepete Ekle
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product Card 4 -->
+        <div class="group bg-slate-800/50 rounded-2xl border border-white/10 overflow-hidden hover:border-green-500/30 transition-all duration-300 hover:transform hover:-translate-y-2">
+          <div class="relative aspect-square bg-gradient-to-br from-slate-700 to-slate-800 p-6">
+            <div class="w-full h-full bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-xl flex items-center justify-center">
+              <span class="text-4xl">⌚</span>
+            </div>
+            <div class="absolute top-4 right-4">
+              <button class="w-8 h-8 bg-white/10 rounded-full flex items-center justify-center hover:bg-red-500/20 transition-colors">
+                <span class="text-sm">❤️</span>
+              </button>
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="font-semibold text-lg mb-2">Akıllı Saat</h3>
+            <p class="text-slate-300 text-sm mb-4">Sağlık takibi ve fitness özellikleri ile akıllı saat</p>
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-2">
+                <span class="text-2xl font-bold text-green-400">₺3.999</span>
+              </div>
+              <button class="px-4 py-2 bg-gradient-to-r from-green-500 to-blue-600 text-white rounded-lg text-sm font-medium hover:shadow-lg transition-all">
+                Sepete Ekle
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter Section -->
+  <section class="py-16 bg-slate-900/50">
+    <div class="mx-auto max-w-4xl px-6 text-center">
+      <h2 class="text-3xl font-bold mb-4">Kampanyalardan Haberdar Olun</h2>
+      <p class="text-slate-300 mb-8">En yeni ürünler ve özel indirimler için e-posta listemize katılın</p>
+      <div class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+        <input type="email" placeholder="E-posta adresiniz" class="flex-1 px-4 py-3 rounded-lg bg-slate-700 border border-white/10 text-white focus:border-green-500 focus:outline-none transition-colors">
+        <button class="px-6 py-3 bg-gradient-to-r from-green-500 to-blue-600 text-white rounded-lg font-medium hover:shadow-lg transition-all">
+          Abone Ol
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Smooth scroll
+    const lenis = new Lenis({ duration: 1.2, smoothWheel: true });
+    function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
+    requestAnimationFrame(raf);
+
+    // GSAP animations
+    gsap.from("header", { y: -50, opacity: 0, duration: 1 });
+    gsap.from("h1", { y: 50, opacity: 0, duration: 1, delay: 0.2 });
+    gsap.from(".group", { y: 30, opacity: 0, duration: 0.8, delay: 0.4, stagger: 0.1 });
+  </script>
+</body>
+</html>
+
+

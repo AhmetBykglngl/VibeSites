@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="tr" class="no-js">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>VibeSites — Profesyonel Web Sitesi Üretim ve Satış</title>
+    <meta name="description" content="VibeSites ile şık, hızlı ve güvenli web siteleri. Hazır şablonlar, özel tasarımlar ve performans odaklı altyapı ile işinizi internete taşıyın." />
+    <link rel="canonical" href="https://YOUR_DOMAIN/" />
+    <!-- Open Graph -->
+    <meta property="og:title" content="VibeSites — Profesyonel Web Sitesi Üretim ve Satış" />
+    <meta property="og:description" content="Hız, güvenlik ve animasyon odaklı modern web siteleri." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://YOUR_DOMAIN/" />
+    <meta property="og:image" content="https://YOUR_DOMAIN/assets/img/logo.svg" />
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="VibeSites — Profesyonel Web Sitesi Üretim ve Satış" />
+    <meta name="twitter:description" content="Hız, güvenlik ve animasyon odaklı modern web siteleri." />
+    <meta name="twitter:image" content="https://YOUR_DOMAIN/assets/img/logo.svg" />
+    <!-- Google Search Console doğrulaması: kodu buraya yapıştırın -->
+    <!-- <meta name="google-site-verification" content="VERIFICATION_CODE" /> -->
+
+    <!-- Güvenlik ve kalite meta'ları (dosyadan açınca bazıları tam etkili olmayabilir) -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.tailwindcss.com https://cdnjs.cloudflare.com https://unpkg.com 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data:; font-src 'self' https://fonts.gstatic.com; connect-src 'self'; frame-ancestors 'none'; upgrade-insecure-requests" />
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()" />
+    <meta name="robots" content="index,follow" />
+    <meta name="theme-color" content="#0b1020" />
+
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+    <!-- Styles -->
+    <link rel="icon" href="assets/img/logo.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+
+    <!-- Tailwind (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: {
+                50: '#eef7ff',
+                100: '#d9ecff',
+                200: '#b6daff',
+                300: '#87c2ff',
+                400: '#58a6ff',
+                500: '#2f89ff',
+                600: '#1c6ce6',
+                700: '#1555b3',
+                800: '#113f80',
+                900: '#0b2a4d',
+              },
+            },
+            fontFamily: {
+              sans: ['Inter', 'system-ui', 'Arial', 'sans-serif'],
+            },
+            boxShadow: {
+              glow: '0 0 0 2px rgba(88,166,255,0.2), 0 0 40px rgba(47,137,255,0.25)',
+            },
+          },
+        },
+        darkMode: 'class',
+      };
+    </script>
+  </head>
+  <body class="min-h-screen bg-slate-950 text-slate-100 antialiased selection:bg-brand-400/30" data-theme="ocean-blue">
+         <!-- Arkaplan dekor -->
+     <div class="pointer-events-none fixed inset-0 -z-10 overflow-hidden bg-animation">
+       <div class="absolute -top-40 -left-40 h-[35rem] w-[35rem] rounded-full bg-gradient-to-br from-brand-500/25 to-fuchsia-500/25 blur-3xl animate-slow-pulse"></div>
+       <div class="absolute -bottom-40 -right-40 h-[35rem] w-[35rem] rounded-full bg-gradient-to-tr from-cyan-500/20 to-emerald-500/20 blur-3xl animate-slow-pulse"></div>
+     </div>
+
+    <!-- Navbar -->
+    <header class="sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-slate-900/60">
+      <nav class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+        <a href="#top" class="group inline-flex items-center gap-2">
+          <img src="assets/img/logo.svg" alt="VibeSites" class="h-8 w-8" />
+          <span class="text-lg font-semibold tracking-tight group-hover:text-brand-300 transition-colors">VibeSites</span>
+        </a>
+        <div class="hidden gap-6 md:flex">
+          <a href="#ozellikler" class="nav-link">Özellikler</a>
+          <a href="#sablonlar" class="nav-link">Şablonlar</a>
+          <a href="#fiyatlar" class="nav-link">Fiyatlar</a>
+          <a href="#referanslar" class="nav-link">Referanslar</a>
+          <a href="#iletisim" class="nav-link">İletişim</a>
+        </div>
+        <div class="flex items-center gap-4">
+          <button id="themeToggle" class="theme-toggle" onclick="openThemeSelector()" title="Tema Değiştir">
+            🎨
+          </button>
+          <a href="#iletisim" class="btn-primary">Teklif Al</a>
+        </div>
+      </nav>
+      <div class="h-px w-full bg-gradient-to-r from-transparent via-brand-500/30 to-transparent"></div>
+    </header>
+
+    <!-- Hero -->
+    <section id="top" class="relative mx-auto flex max-w-7xl flex-col items-center gap-8 px-6 pb-24 pt-20 md:pt-28">
+      <div class="relative isolate grid w-full items-center gap-10 md:grid-cols-2">
+        <div>
+          <h1 class="reveal fade-up text-4xl font-extrabold leading-tight tracking-tight md:text-6xl">
+            Satılabilir web siteleri<br />
+            <span class="bg-gradient-to-r from-brand-300 via-cyan-300 to-emerald-300 bg-clip-text text-transparent">
+              hız, güvenlik ve animasyonla
+            </span>
+          </h1>
+          
+          <!-- Animasyonlu Geliştirici İsmi -->
+          <div class="developer-signature reveal fade-up mt-6">
+            <div class="signature-container">
+              <span class="signature-label">Geliştirici:</span>
+              <div class="signature-name">
+                <span class="name-letter" data-letter="A">A</span>
+                <span class="name-letter" data-letter="h">h</span>
+                <span class="name-letter" data-letter="m">m</span>
+                <span class="name-letter" data-letter="e">e</span>
+                <span class="name-letter" data-letter="t">t</span>
+                <span class="name-space">&nbsp;</span>
+                <span class="name-letter" data-letter="B">B</span>
+                <span class="name-letter" data-letter="ü">ü</span>
+                <span class="name-letter" data-letter="y">y</span>
+                <span class="name-letter" data-letter="ü">ü</span>
+                <span class="name-letter" data-letter="k">k</span>
+                <span class="name-letter" data-letter="o">o</span>
+                <span class="name-letter" data-letter="ğ">ğ</span>
+                <span class="name-letter" data-letter="l">l</span>
+                <span class="name-letter" data-letter="a">a</span>
+                <span class="name-letter" data-letter="n">n</span>
+                <span class="name-letter" data-letter="g">g</span>
+                <span class="name-letter" data-letter="i">i</span>
+                <span class="name-letter" data-letter="l">l</span>
+              </div>
+              <div class="signature-particles"></div>
+            </div>
+          </div>
+          <p class="reveal fade-up text-slate-300/90 mt-5 max-w-xl text-lg">
+            VibeSites; hızlandırılmış kurulum, yüksek güvenlik ve etkileyici hareket tasarımıyla modern web siteleri sunar. Her kaydırmada farklı animasyon deneyimi.
+          </p>
+          <div class="reveal fade-up mt-8 flex flex-wrap gap-3">
+            <a href="#sablonlar" class="btn-primary">Şablonları İncele</a>
+            <a href="#fiyatlar" class="btn-ghost">Fiyat Planları</a>
+          </div>
+          <div class="reveal fade-up mt-10 flex items-center gap-6 opacity-90">
+            <div class="flex -space-x-3">
+              <div class="avatar"></div>
+              <div class="avatar"></div>
+              <div class="avatar"></div>
+            </div>
+            <p class="text-sm text-slate-300">500+ mutlu müşteri • 4.9/5 memnuniyet</p>
+          </div>
+        </div>
+        <div class="relative">
+          <div class="parallax-y relative mx-auto aspect-[4/3] w-full max-w-xl rounded-3xl border border-white/10 bg-gradient-to-br from-slate-900 to-slate-800 p-2 shadow-glow">
+            <div class="relative h-full w-full overflow-hidden rounded-2xl bg-slate-950">
+              <div class="absolute inset-0 bg-[radial-gradient(60rem_30rem_at_50%_10%,rgba(47,137,255,0.2),transparent_60%)]"></div>
+              <div class="absolute -left-10 -top-10 h-56 w-56 rounded-full bg-brand-500/20 blur-2xl"></div>
+              <div class="absolute -bottom-16 -right-16 h-64 w-64 rounded-full bg-fuchsia-500/20 blur-2xl"></div>
+
+                             <div class="grid hero-metrics-grid h-full grid-cols-2 gap-3 p-6">
+                                   <div class="reveal slide-right card-demo">
+                    <div class="hero-card-content">
+                      <div class="hero-card-icon">⚡</div>
+                      <div class="hero-card-title">Hız</div>
+                      <div class="hero-card-progress">
+                        <div class="hero-card-bar" style="width: 100%"></div>
+                      </div>
+                      <div class="hero-card-value">100%</div>
+                    </div>
+                  </div>
+                  <div class="reveal slide-left card-demo">
+                    <div class="hero-card-content">
+                      <div class="hero-card-icon">🛡️</div>
+                      <div class="hero-card-title">Güvenlik</div>
+                      <div class="hero-card-progress">
+                        <div class="hero-card-bar" style="width: 100%"></div>
+                      </div>
+                      <div class="hero-card-value">100%</div>
+                    </div>
+                  </div>
+                  <div class="reveal zoom-in card-demo">
+                    <div class="hero-card-content">
+                      <div class="hero-card-icon">🎨</div>
+                      <div class="hero-card-title">Tasarım</div>
+                      <div class="hero-card-progress">
+                        <div class="hero-card-bar" style="width: 100%"></div>
+                      </div>
+                      <div class="hero-card-value">100%</div>
+                    </div>
+                  </div>
+                  <div class="reveal rotate-in card-demo">
+                    <div class="hero-card-content">
+                      <div class="hero-card-icon">🚀</div>
+                      <div class="hero-card-title">Performans</div>
+                      <div class="hero-card-progress">
+                        <div class="hero-card-bar" style="width: 100%"></div>
+                      </div>
+                      <div class="hero-card-value">100%</div>
+                    </div>
+                  </div>
+               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Özellikler -->
+    <section id="ozellikler" class="section">
+      <div class="section-container">
+        <h2 class="section-title reveal fade-up">Neden VibeSites?</h2>
+        <p class="section-subtitle reveal fade-up">Performans, güvenlik ve tasarımın mükemmel uyumu.</p>
+                 <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+           <div class="feature-card reveal tilt ocean-float">
+             <div class="feature-icon">⚡</div>
+             <h3 class="feature-title">Aşırı Hızlı</h3>
+             <p class="feature-text">Lighthouse 95+ puan hedefi, CDN ve optimizasyonlarla ışık hızında sayfalar.</p>
+           </div>
+           <div class="feature-card reveal tilt forest-breathe">
+             <div class="feature-icon">🛡️</div>
+             <h3 class="feature-title">Güvenlik Odaklı</h3>
+             <p class="feature-text">Sıkı başlıklar, form sertleştirme ve üçüncü parti minimizasyonu ile güvenli mimari.</p>
+           </div>
+           <div class="feature-card reveal tilt sunset-bounce">
+             <div class="feature-icon">🎨</div>
+             <h3 class="feature-title">Zengin Animasyon</h3>
+             <p class="feature-text">GSAP + ScrollTrigger + Lenis ile her kaydırmada özgün hareketler.</p>
+           </div>
+           <div class="feature-card reveal tilt royal-float">
+             <div class="feature-icon">🧩</div>
+             <h3 class="feature-title">Modüler Şablonlar</h3>
+             <p class="feature-text">Sektöre özel hazır sayfa blokları; hızlı kurulum, kolay özelleştirme.</p>
+           </div>
+           <div class="feature-card reveal tilt midnight-sharp">
+             <div class="feature-icon">🚀</div>
+             <h3 class="feature-title">SEO + Dönüşüm</h3>
+             <p class="feature-text">Meta ve şema kurulumları, A/B odaklı UI/UX bileşenleri.</p>
+           </div>
+           <div class="feature-card reveal tilt ocean-ripple">
+             <div class="feature-icon">🔧</div>
+             <h3 class="feature-title">Bakım Kolaylığı</h3>
+             <p class="feature-text">Bileşen mantığı, okunur sınıflar ve dokümantasyonla sürdürülebilirlik.</p>
+           </div>
+         </div>
+      </div>
+    </section>
+
+    <!-- Şablonlar -->
+    <section id="sablonlar" class="section">
+      <div class="section-container">
+        <h2 class="section-title reveal fade-up">Hazır Şablon Setleri</h2>
+        <p class="section-subtitle reveal fade-up">Her sektör için hızla yayına alınabilir temalar.</p>
+
+        <!-- Filtreler -->
+        <div class="filter-bar reveal fade-up mt-6 flex flex-wrap items-center gap-2">
+          <button class="pill is-active" data-filter="all">Tümü</button>
+          <button class="pill" data-filter="kurumsal">Kurumsal</button>
+          <button class="pill" data-filter="eticaret">E‑Ticaret</button>
+          <button class="pill" data-filter="portfolyo">Portfolyo</button>
+          <button class="pill" data-filter="saas">SaaS</button>
+        </div>
+
+        <!-- Kartlar -->
+        <div class="mt-16 md:mt-20 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 templates-grid">
+                     <!-- Kurumsal Pro -->
+           <article class="template-card reveal parallax-y" data-category="kurumsal" data-template="templates/corporate-pro.html">
+             <div class="template-thumb complex">
+               <div class="mockup-content">
+                 <div class="mockup-header">
+                   <div class="mockup-nav">
+                     <div class="mockup-logo">🏢</div>
+                     <div class="mockup-menu">
+                       <span></span><span></span><span></span><span></span>
+                     </div>
+                   </div>
+                 </div>
+                 <div class="mockup-hero">
+                   <div class="mockup-title">Kurumsal Çözümler</div>
+                   <div class="mockup-subtitle">Profesyonel hizmetler</div>
+                 </div>
+                 <div class="mockup-grid">
+                   <div class="mockup-card"></div>
+                   <div class="mockup-card"></div>
+                   <div class="mockup-card"></div>
+                 </div>
+               </div>
+             </div>
+             <div class="template-body">
+               <div class="template-head">
+                 <h3>Kurumsal Pro</h3>
+                 <span class="badge">İleri</span>
+               </div>
+               <p>Kurumsal kimliğe uygun, ciddi ve minimal arayüz; çoklu sayfa ve mega menü.</p>
+               <div class="template-badges">
+                 <span>GSAP</span><span>Tailwind</span><span>SEO</span>
+               </div>
+               <div class="template-actions">
+                 <button class="btn-primary btn-preview">Önizle</button>
+                 <a class="btn-ghost" target="_blank" href="templates/corporate-pro.html">Detay</a>
+               </div>
+             </div>
+           </article>
+
+           <!-- E‑Ticaret Ignite -->
+           <article class="template-card reveal parallax-y forest-glow" data-category="eticaret" data-template="templates/ecommerce-ignite.html">
+             <div class="template-thumb complex eticaret">
+               <div class="mockup-content">
+                 <div class="mockup-header">
+                   <div class="mockup-nav">
+                     <div class="mockup-logo">🛒</div>
+                     <div class="mockup-search">🔍</div>
+                     <div class="mockup-cart">🛍️</div>
+                   </div>
+                 </div>
+                 <div class="mockup-products">
+                   <div class="mockup-product">
+                     <div class="mockup-product-img"></div>
+                     <div class="mockup-product-title">Ürün 1</div>
+                     <div class="mockup-product-price">₺299</div>
+                   </div>
+                   <div class="mockup-product">
+                     <div class="mockup-product-img"></div>
+                     <div class="mockup-product-title">Ürün 2</div>
+                     <div class="mockup-product-price">₺199</div>
+                   </div>
+                   <div class="mockup-product">
+                     <div class="mockup-product-img"></div>
+                     <div class="mockup-product-title">Ürün 3</div>
+                     <div class="mockup-product-price">₺399</div>
+                   </div>
+                 </div>
+               </div>
+             </div>
+             <div class="template-body">
+               <div class="template-head">
+                 <h3>E‑Ticaret Ignite</h3>
+                 <span class="badge">İleri</span>
+               </div>
+               <p>Dönüşüm odaklı ürün kartları, filtreler ve promosyon alanları.</p>
+               <div class="template-badges">
+                 <span>GSAP</span><span>Grid</span><span>Checkout</span>
+               </div>
+               <div class="template-actions">
+                 <button class="btn-primary btn-preview">Önizle</button>
+                 <a class="btn-ghost" target="_blank" href="templates/ecommerce-ignite.html">Detay</a>
+               </div>
+             </div>
+           </article>
+
+           <!-- Portfolyo Neo -->
+           <article class="template-card reveal parallax-y sunset-neon" data-category="portfolyo" data-template="templates/portfolio-neo.html">
+             <div class="template-thumb complex portfolyo">
+               <div class="mockup-content">
+                 <div class="mockup-header">
+                   <div class="mockup-nav">
+                     <div class="mockup-logo">🎨</div>
+                     <div class="mockup-menu">
+                       <span></span><span></span><span></span>
+                     </div>
+                   </div>
+                 </div>
+                 <div class="mockup-portfolio">
+                   <div class="mockup-portfolio-item">
+                     <div class="mockup-portfolio-img"></div>
+                     <div class="mockup-portfolio-overlay">
+                       <div class="mockup-portfolio-title">Proje 1</div>
+                       <div class="mockup-portfolio-cat">Web Tasarım</div>
+                     </div>
+                   </div>
+                   <div class="mockup-portfolio-item">
+                     <div class="mockup-portfolio-img"></div>
+                     <div class="mockup-portfolio-overlay">
+                       <div class="mockup-portfolio-title">Proje 2</div>
+                       <div class="mockup-portfolio-cat">UI/UX</div>
+                     </div>
+                   </div>
+                   <div class="mockup-portfolio-item">
+                     <div class="mockup-portfolio-img"></div>
+                     <div class="mockup-portfolio-overlay">
+                       <div class="mockup-portfolio-title">Proje 3</div>
+                       <div class="mockup-portfolio-cat">Branding</div>
+                     </div>
+                   </div>
+                 </div>
+               </div>
+             </div>
+             <div class="template-body">
+               <div class="template-head">
+                 <h3>Portfolyo Neo</h3>
+                 <span class="badge">İleri</span>
+               </div>
+               <p>Yaratıcı ızgara, hover efektleri ve akışkan geçişler ile güçlü vitrin.</p>
+               <div class="template-badges">
+                 <span>Lenis</span><span>Masonry</span><span>Framer</span>
+               </div>
+               <div class="template-actions">
+                 <button class="btn-primary btn-preview">Önizle</button>
+                 <a class="btn-ghost" target="_blank" href="templates/portfolio-neo.html">Detay</a>
+               </div>
+             </div>
+           </article>
+
+           <!-- SaaS Stellar -->
+           <article class="template-card reveal parallax-y royal-crystal" data-category="saas" data-template="templates/saas-stellar.html">
+             <div class="template-thumb complex saas">
+               <div class="mockup-content">
+                 <div class="mockup-header">
+                   <div class="mockup-nav">
+                     <div class="mockup-logo">🚀</div>
+                     <div class="mockup-menu">
+                       <span></span><span></span><span></span><span></span>
+                     </div>
+                   </div>
+                 </div>
+                 <div class="mockup-dashboard">
+                   <div class="mockup-chart">
+                     <div class="mockup-chart-bar" style="height: 60%"></div>
+                     <div class="mockup-chart-bar" style="height: 80%"></div>
+                     <div class="mockup-chart-bar" style="height: 45%"></div>
+                     <div class="mockup-chart-bar" style="height: 90%"></div>
+                   </div>
+                   <div class="mockup-stats">
+                     <div class="mockup-stat">
+                       <div class="mockup-stat-number">2.4K</div>
+                       <div class="mockup-stat-label">Kullanıcı</div>
+                     </div>
+                     <div class="mockup-stat">
+                       <div class="mockup-stat-number">89%</div>
+                       <div class="mockup-stat-label">Başarı</div>
+                     </div>
+                   </div>
+                 </div>
+               </div>
+             </div>
+             <div class="template-body">
+               <div class="template-head">
+                 <h3>SaaS Stellar</h3>
+                 <span class="badge">İleri</span>
+               </div>
+               <p>Ürün özellikleri, fiyat tabloları ve CTA odaklı dönüşüm tüneli.</p>
+               <div class="template-badges">
+                 <span>Pricing</span><span>CTA</span><span>Docs</span>
+               </div>
+               <div class="template-actions">
+                 <button class="btn-primary btn-preview">Önizle</button>
+                 <a class="btn-ghost" target="_blank" href="templates/saas-stellar.html">Detay</a>
+               </div>
+             </div>
+           </article>
+
+           <!-- Blog Atlas -->
+           <article class="template-card reveal parallax-y midnight-line" data-category="kurumsal" data-template="templates/blog-atlas.html">
+             <div class="template-thumb complex blog">
+               <div class="mockup-content">
+                 <div class="mockup-header">
+                   <div class="mockup-nav">
+                     <div class="mockup-logo">📝</div>
+                     <div class="mockup-search">🔍</div>
+                     <div class="mockup-menu">
+                       <span></span><span></span><span></span>
+                     </div>
+                   </div>
+                 </div>
+                 <div class="mockup-blog">
+                   <div class="mockup-blog-post">
+                     <div class="mockup-blog-img"></div>
+                     <div class="mockup-blog-content">
+                       <div class="mockup-blog-title">Modern Web Tasarımı</div>
+                       <div class="mockup-blog-excerpt">Yeni nesil web sitelerinin özellikleri...</div>
+                       <div class="mockup-blog-meta">
+                         <span>5 dk okuma</span>
+                         <span>Web Tasarım</span>
+                       </div>
+                     </div>
+                   </div>
+                   <div class="mockup-blog-post">
+                     <div class="mockup-blog-img"></div>
+                     <div class="mockup-blog-content">
+                       <div class="mockup-blog-title">SEO Optimizasyonu</div>
+                       <div class="mockup-blog-excerpt">Arama motorlarında üst sıralarda...</div>
+                       <div class="mockup-blog-meta">
+                         <span>3 dk okuma</span>
+                         <span>SEO</span>
+                       </div>
+                     </div>
+                   </div>
+                 </div>
+               </div>
+             </div>
+             <div class="template-body">
+               <div class="template-head">
+                 <h3>Blog Atlas</h3>
+                 <span class="badge">İleri</span>
+               </div>
+               <p>İçerik odaklı, okunabilirlik yüksek tipografi ve kategori filtreleri.</p>
+               <div class="template-badges">
+                 <span>MDX</span><span>TOC</span><span>Search</span>
+               </div>
+               <div class="template-actions">
+                 <button class="btn-primary btn-preview">Önizle</button>
+                 <a class="btn-ghost" target="_blank" href="templates/blog-atlas.html">Detay</a>
+               </div>
+             </div>
+           </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Fiyatlar -->
+    <section id="fiyatlar" class="section">
+      <div class="section-container">
+        <h2 class="section-title reveal fade-up">Şeffaf Fiyatlandırma</h2>
+        <p class="section-subtitle reveal fade-up">İhtiyacınıza uygun planı seçin.</p>
+        <div class="mt-12 grid gap-6 md:grid-cols-3">
+          <div class="price-card reveal">
+            <h3 class="price-title">Başlangıç</h3>
+            <p class="price-value">₺7.500</p>
+            <ul class="price-list">
+              <li>Tek sayfa hızlı kurulum</li>
+              <li>Temel animasyonlar</li>
+              <li>Basit iletişim formu</li>
+            </ul>
+            <a href="#iletisim" class="btn-primary mt-6">Bu planı seç</a>
+          </div>
+          <div class="price-card featured reveal">
+            <h3 class="price-title">Profesyonel</h3>
+            <p class="price-value">₺15.000</p>
+            <ul class="price-list">
+              <li>Çok sayfalı yapı</li>
+              <li>GSAP animasyon seti</li>
+              <li>Gelişmiş SEO</li>
+            </ul>
+            <a href="#iletisim" class="btn-primary mt-6">Bu planı seç</a>
+          </div>
+          <div class="price-card reveal">
+            <h3 class="price-title">Kurumsal</h3>
+            <p class="price-value">₺30.000+</p>
+            <ul class="price-list">
+              <li>Özel tasarım & geliştirime</li>
+              <li>İleri güvenlik & performans</li>
+              <li>Özel entegrasyonlar</li>
+            </ul>
+            <a href="#iletisim" class="btn-primary mt-6">Bu planı seç</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Referanslar -->
+    <section id="referanslar" class="section">
+      <div class="section-container">
+        <h2 class="section-title reveal fade-up">Müşteriler Ne Diyor?</h2>
+        <p class="section-subtitle reveal fade-up">Gerçek geri bildirimler.</p>
+        <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <figure class="testimonial reveal">
+            <blockquote>Hız ve tasarım harika, teslimat çok hızlıydı!</blockquote>
+            <figcaption>— A. Demir, Girişimci</figcaption>
+          </figure>
+          <figure class="testimonial reveal">
+            <blockquote>Animasyonlar markamıza enerji kattı, dönüşümler arttı.</blockquote>
+            <figcaption>— B. Yıldız, Ajans Sahibi</figcaption>
+          </figure>
+          <figure class="testimonial reveal">
+            <blockquote>Güvenlik ve performans konusunda içim çok rahat.</blockquote>
+            <figcaption>— C. Şahin, CTO</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- İletişim -->
+    <section id="iletisim" class="section">
+      <div class="section-container">
+        <h2 class="section-title reveal fade-up">Teklif Alın</h2>
+        <p class="section-subtitle reveal fade-up">Kısa formu doldurun, 24 saat içinde dönüş yapalım.</p>
+        <form class="mt-10 grid gap-4 rounded-2xl border border-white/10 bg-slate-900/40 p-6 backdrop-blur">
+          <div class="grid gap-4 sm:grid-cols-2">
+            <label class="form-field">
+              <span>Ad Soyad</span>
+              <input type="text" name="name" required placeholder="Adınız" />
+            </label>
+            <label class="form-field">
+              <span>E-posta</span>
+              <input type="email" name="email" required placeholder="ornek@domain.com" />
+            </label>
+          </div>
+          <label class="form-field">
+            <span>İhtiyaç</span>
+            <select name="need" required>
+              <option value="">Seçiniz</option>
+              <option>Kurumsal Site</option>
+              <option>E-Ticaret</option>
+              <option>Portfolyo</option>
+              <option>Blog / İçerik</option>
+              <option>Diğer</option>
+            </select>
+          </label>
+          <label class="form-field">
+            <span>Mesaj</span>
+            <textarea name="message" rows="4" placeholder="Kısaca projenizi anlatın..."></textarea>
+          </label>
+          <div class="mt-2 flex items-center justify-between gap-4">
+            <label class="flex items-center gap-2 text-sm text-slate-300/80">
+              <input type="checkbox" required />
+              <span>Kvkk ve gizlilik politikasını kabul ediyorum</span>
+            </label>
+            <button type="submit" class="btn-primary">Gönder</button>
+          </div>
+          <p class="mt-2 text-xs text-slate-400">Formlar demo amaçlıdır. Yayına alınırken sunucu tarafı güvenlik katmanları eklenecektir.</p>
+        </form>
+      </div>
+    </section>
+
+    <footer class="border-t border-white/10 py-10">
+      <div class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-6 px-6 text-sm text-slate-400 md:flex-row">
+        <div class="flex items-center gap-2">
+          <img src="assets/img/logo.svg" class="h-5 w-5" alt="VibeSites" />
+          <span>© <span id="year"></span> VibeSites. Tüm hakları saklıdır.</span>
+        </div>
+        <div class="flex gap-4">
+          <a class="hover:text-slate-200" href="#">Gizlilik</a>
+          <a class="hover:text-slate-200" href="#">KVKK</a>
+          <a class="hover:text-slate-200" href="#">Sözleşme</a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Tema Seçici Modal -->
+    <div id="themeSelector" class="theme-selector">
+      <div class="theme-modal">
+        <button class="theme-close" onclick="closeThemeSelector()">&times;</button>
+        <h2 class="theme-title">Tema Seçin</h2>
+        <div class="theme-grid">
+          <div class="theme-option" data-theme="ocean-blue" onclick="changeTheme('ocean-blue')">
+            <div class="theme-preview"></div>
+            <div class="theme-name">Ocean Blue</div>
+            <div class="theme-description">Yumuşak ve akışkan animasyonlar</div>
+          </div>
+          <div class="theme-option" data-theme="forest-green" onclick="changeTheme('forest-green')">
+            <div class="theme-preview"></div>
+            <div class="theme-name">Forest Green</div>
+            <div class="theme-description">Doğal ve organik hareketler</div>
+          </div>
+          <div class="theme-option" data-theme="sunset-orange" onclick="changeTheme('sunset-orange')">
+            <div class="theme-preview"></div>
+            <div class="theme-name">Sunset Orange</div>
+            <div class="theme-description">Enerjik ve dinamik efektler</div>
+          </div>
+          <div class="theme-option" data-theme="royal-purple" onclick="changeTheme('royal-purple')">
+            <div class="theme-preview"></div>
+            <div class="theme-name">Royal Purple</div>
+            <div class="theme-description">Asil ve zarif geçişler</div>
+          </div>
+          <div class="theme-option" data-theme="midnight-dark" onclick="changeTheme('midnight-dark')">
+            <div class="theme-preview"></div>
+            <div class="theme-name">Midnight Dark</div>
+            <div class="theme-description">Minimalist ve keskin animasyonlar</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <noscript>
+      <div style="position:fixed;inset:0;background:#0b1020;color:#e2e8f0;display:flex;align-items:center;justify-content:center;z-index:9999;padding:16px;text-align:center;">
+        Bu site animasyonlar için JavaScript kullanır. Tarayıcınızda JavaScript devre dışı görünüyor, bu nedenle sade görünüm gösteriliyor.
+      </div>
+    </noscript>
+
+    <!-- JS: GSAP, ScrollTrigger, Lenis -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" referrerpolicy="no-referrer"></script>
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.33/bundled/lenis.min.js"></script>
+    <script src="assets/js/main.js" defer></script>
+  </body>
+  </html>
+
+

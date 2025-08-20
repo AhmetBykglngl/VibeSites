@@ -1,0 +1,2254 @@
+/* ===== ANİMASYONLU GELİŞTİRİCİ İSMİ ===== */
+/* Geliştirici İmzası Stilleri */
+.developer-signature {
+  position: relative;
+  z-index: 10;
+}
+
+.signature-container {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 16px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50px;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.signature-container:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--brand-400);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(47, 137, 255, 0.2);
+}
+
+.signature-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  opacity: 0.8;
+}
+
+.signature-name {
+  display: flex;
+  align-items: center;
+  gap: 1px;
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+}
+
+.name-letter {
+  position: relative;
+  display: inline-block;
+  color: var(--brand-300);
+  transition: all 0.3s ease;
+  cursor: default;
+  animation: name-letter-float 3s ease-in-out infinite;
+  animation-delay: calc(var(--letter-index, 0) * 0.1s);
+}
+
+.name-letter:hover {
+  color: var(--brand-100);
+  transform: translateY(-4px) scale(1.2);
+  text-shadow: 0 0 20px var(--brand-300);
+}
+
+.name-space {
+  width: 8px;
+}
+
+.signature-particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.signature-particles::before,
+.signature-particles::after {
+  content: '';
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: var(--brand-400);
+  border-radius: 50%;
+  opacity: 0;
+  animation: particle-float 4s ease-in-out infinite;
+}
+
+.signature-particles::before {
+  top: 20%;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.signature-particles::after {
+  top: 60%;
+  right: 15%;
+  animation-delay: 2s;
+}
+
+/* İsim Harfi Animasyonları */
+@keyframes name-letter-float {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-2px) rotate(1deg);
+  }
+  50% {
+    transform: translateY(-4px) rotate(0deg);
+  }
+  75% {
+    transform: translateY(-2px) rotate(-1deg);
+  }
+}
+
+/* Parçacık Animasyonları */
+@keyframes particle-float {
+  0%, 100% {
+    opacity: 0;
+    transform: translateY(0) scale(0);
+  }
+  25% {
+    opacity: 0.8;
+    transform: translateY(-10px) scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-20px) scale(1.2);
+  }
+  75% {
+    opacity: 0.6;
+    transform: translateY(-30px) scale(1);
+  }
+}
+
+/* Tema Özel Animasyonları */
+[data-theme="ocean-blue"] .name-letter {
+  animation: name-letter-ocean 3s ease-in-out infinite;
+}
+
+[data-theme="sunset-orange"] .name-letter {
+  animation: name-letter-sunset 3s ease-in-out infinite;
+}
+
+[data-theme="forest-green"] .name-letter {
+  animation: name-letter-forest 3s ease-in-out infinite;
+}
+
+[data-theme="royal-purple"] .name-letter {
+  animation: name-letter-royal 3s ease-in-out infinite;
+}
+
+[data-theme="midnight-black"] .name-letter {
+  animation: name-letter-midnight 3s ease-in-out infinite;
+}
+
+/* Ocean Blue Tema Animasyonu */
+@keyframes name-letter-ocean {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+    color: var(--brand-300);
+  }
+  25% {
+    transform: translateY(-3px) rotate(2deg);
+    color: var(--cyan-300);
+  }
+  50% {
+    transform: translateY(-6px) rotate(0deg);
+    color: var(--emerald-300);
+  }
+  75% {
+    transform: translateY(-3px) rotate(-2deg);
+    color: var(--brand-200);
+  }
+}
+
+/* Sunset Orange Tema Animasyonu */
+@keyframes name-letter-sunset {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+    color: var(--orange-300);
+  }
+  25% {
+    transform: translateY(-2px) scale(1.1) rotate(1deg);
+    color: var(--red-300);
+  }
+  50% {
+    transform: translateY(-4px) scale(1.2) rotate(0deg);
+    color: var(--yellow-300);
+  }
+  75% {
+    transform: translateY(-2px) scale(1.1) rotate(-1deg);
+    color: var(--orange-200);
+  }
+}
+
+/* Forest Green Tema Animasyonu */
+@keyframes name-letter-forest {
+  0%, 100% {
+    transform: translateY(0) skewX(0deg);
+    color: var(--emerald-300);
+  }
+  25% {
+    transform: translateY(-2px) skewX(2deg);
+    color: var(--green-300);
+  }
+  50% {
+    transform: translateY(-4px) skewX(0deg);
+    color: var(--teal-300);
+  }
+  75% {
+    transform: translateY(-2px) skewX(-2deg);
+    color: var(--emerald-200);
+  }
+}
+
+/* Royal Purple Tema Animasyonu */
+@keyframes name-letter-royal {
+  0%, 100% {
+    transform: translateY(0) rotateY(0deg);
+    color: var(--purple-300);
+  }
+  25% {
+    transform: translateY(-2px) rotateY(10deg);
+    color: var(--fuchsia-300);
+  }
+  50% {
+    transform: translateY(-4px) rotateY(0deg);
+    color: var(--violet-300);
+  }
+  75% {
+    transform: translateY(-2px) rotateY(-10deg);
+    color: var(--purple-200);
+  }
+}
+
+/* Midnight Black Tema Animasyonu */
+@keyframes name-letter-midnight {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+    color: var(--slate-300);
+  }
+  25% {
+    transform: translateY(-1px) scale(1.05);
+    color: var(--gray-300);
+  }
+  50% {
+    transform: translateY(-2px) scale(1.1);
+    color: var(--slate-200);
+  }
+  75% {
+    transform: translateY(-1px) scale(1.05);
+    color: var(--gray-200);
+  }
+}
+
+/* ===== PERFORMANS OPTİMİZASYONLARI ===== */
+
+/* GPU Hızlandırma */
+* {
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  -o-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000;
+  -moz-perspective: 1000;
+  -ms-perspective: 1000;
+  perspective: 1000;
+}
+
+/* Animasyon Performansı */
+.hero-card-content,
+.feature-card,
+.template-card,
+.btn-primary {
+  will-change: transform, opacity;
+  contain: layout style paint;
+}
+
+/* Scroll Performansı */
+html {
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* GitHub Pages klasör yapısında CSS öncelikleri için güvenli reset */
+body { min-height: 100vh; }
+
+/* Font Loading Optimizasyonu */
+@font-face {
+  font-family: 'Inter';
+  font-display: swap;
+  src: url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+}
+
+/* Image Optimizasyonu */
+img {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
+/* Layout Shift Önleme */
+.hero-card-content,
+.mockup-content {
+  aspect-ratio: 1;
+  min-height: 0;
+}
+
+/* Critical CSS */
+.hero-card-bar {
+  transform: scaleX(1) !important;
+  animation: hero-bar-fill 1.5s ease-out forwards;
+  animation-delay: 0.5s;
+}
+
+/* Hero kartlarının görünürlüğünü garanti et */
+.card-demo .hero-card-content,
+.hero-card-content {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+  visibility: visible !important;
+  display: flex !important;
+  z-index: 10 !important;
+}
+
+/* Progress bar'ların görünürlüğünü garanti et */
+.hero-card-bar {
+  width: 100% !important;
+  transform: scaleX(1) !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  z-index: 5 !important;
+}
+
+/* Hero kart değerlerinin görünürlüğünü garanti et */
+.hero-card-value {
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: block !important;
+  z-index: 5 !important;
+}
+
+/* Tasarım ve Performans kartlarının özel görünürlük garantisi */
+.card-demo:nth-child(3) .hero-card-content,
+.card-demo:nth-child(4) .hero-card-content {
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: flex !important;
+  z-index: 15 !important;
+}
+
+.card-demo:nth-child(3) .hero-card-bar,
+.card-demo:nth-child(4) .hero-card-bar {
+  width: 100% !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  z-index: 10 !important;
+}
+
+.card-demo:nth-child(3) .hero-card-value,
+.card-demo:nth-child(4) .hero-card-value {
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: block !important;
+  z-index: 10 !important;
+}
+
+/* 100% Performans Animasyonu */
+@keyframes hero-bar-fill {
+  0% { transform: scaleX(0); }
+  100% { transform: scaleX(1); }
+}
+
+/* Hız Optimizasyonu - 100% */
+.hero-card-content:nth-child(1) .hero-card-bar {
+  background: linear-gradient(90deg, #00ff88, #00ccff);
+  box-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
+}
+
+/* Güvenlik Optimizasyonu - 100% */
+.hero-card-content:nth-child(2) .hero-card-bar {
+  background: linear-gradient(90deg, #ff6b6b, #ffd93d);
+  box-shadow: 0 0 10px rgba(255, 107, 107, 0.5);
+}
+
+/* Tasarım Optimizasyonu - 100% */
+.hero-card-content:nth-child(3) .hero-card-bar {
+  background: linear-gradient(90deg, #a855f7, #ec4899);
+  box-shadow: 0 0 10px rgba(168, 85, 247, 0.5);
+}
+
+/* Performans Optimizasyonu - 100% */
+.hero-card-content:nth-child(4) .hero-card-bar {
+  background: linear-gradient(90deg, #f97316, #fbbf24);
+  box-shadow: 0 0 10px rgba(249, 115, 22, 0.5);
+}
+
+/* 100% Değer Animasyonu */
+.hero-card-value {
+  animation: value-pulse 2s ease-in-out infinite;
+}
+
+@keyframes value-pulse {
+  0%, 100% { 
+    transform: scale(1);
+    text-shadow: 0 0 8px rgba(34, 211, 238, 0.5);
+  }
+  50% { 
+    transform: scale(1.05);
+    text-shadow: 0 0 15px rgba(34, 211, 238, 0.8);
+  }
+}
+
+/* ===== MEVCUT CSS DEVAM EDİYOR ===== */
+
+/* ===== TEMA SİSTEMİ ===== */
+:root {
+  /* Varsayılan tema: Ocean Blue */
+  --primary-color: #2f89ff;
+  --secondary-color: #a855f7;
+  --accent-color: #22d3ee;
+  --background-primary: #0b1020;
+  --background-secondary: #1e293b;
+  --background-tertiary: rgba(2,6,23,.7);
+  --text-primary: #f8fafc;
+  --text-secondary: #e2e8f0;
+  --text-muted: #cbd5e1;
+  --border-color: rgba(255,255,255,.08);
+  --border-hover: rgba(255,255,255,.18);
+  --shadow-color: rgba(47,137,255,.25);
+  --gradient-primary: linear-gradient(90deg, #2f89ff, #a855f7);
+  --gradient-secondary: linear-gradient(135deg, rgba(47,137,255,.25), rgba(168,85,247,.2));
+  --ring-brand: rgba(47, 137, 255, 0.35);
+  
+  /* Animasyon değişkenleri */
+  --animation-duration: 0.3s;
+  --animation-ease: ease;
+  --hover-scale: 1.05;
+  --hover-rotate: 2deg;
+  --hover-translate: -4px;
+  --pulse-scale: 1.06;
+  --bounce-height: 10px;
+  --glow-intensity: 0.25;
+  --ripple-size: 20px;
+  
+  /* Yeni animasyon değişkenleri */
+  --float-distance: 10px;
+  --shake-intensity: 5px;
+  --morph-duration: 0.8s;
+  --wave-speed: 2s;
+  --particle-count: 5;
+  --magnetic-strength: 0.3;
+  --elastic-bounce: 0.2;
+  --neon-glow: 0.5;
+  --hologram-opacity: 0.3;
+  --crystal-rotation: 15deg;
+}
+
+/* Tema 1: Ocean Blue (Varsayılan) - Yumuşak ve Akışkan */
+[data-theme="ocean-blue"] {
+  --primary-color: #2f89ff;
+  --secondary-color: #a855f7;
+  --accent-color: #22d3ee;
+  --background-primary: #0b1020;
+  --background-secondary: #1e293b;
+  --background-tertiary: rgba(2,6,23,.7);
+  --text-primary: #f8fafc;
+  --text-secondary: #e2e8f0;
+  --text-muted: #cbd5e1;
+  --border-color: rgba(255,255,255,.08);
+  --border-hover: rgba(255,255,255,.18);
+  --shadow-color: rgba(47,137,255,.25);
+  --gradient-primary: linear-gradient(90deg, #2f89ff, #a855f7);
+  --gradient-secondary: linear-gradient(135deg, rgba(47,137,255,.25), rgba(168,85,247,.2));
+  --ring-brand: rgba(47, 137, 255, 0.35);
+  
+  /* Ocean Blue Animasyonları - Yumuşak ve Akışkan */
+  --animation-duration: 0.4s;
+  --animation-ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --hover-scale: 1.02;
+  --hover-rotate: 1deg;
+  --hover-translate: -2px;
+  --pulse-scale: 1.03;
+  --bounce-height: 8px;
+  --glow-intensity: 0.3;
+  --ripple-size: 25px;
+  
+  /* Ocean Blue Özel Animasyonlar */
+  --float-distance: 8px;
+  --shake-intensity: 2px;
+  --morph-duration: 1.2s;
+  --wave-speed: 3s;
+  --particle-count: 3;
+  --magnetic-strength: 0.2;
+  --elastic-bounce: 0.1;
+  --neon-glow: 0.3;
+  --hologram-opacity: 0.2;
+  --crystal-rotation: 8deg;
+}
+
+/* Tema 2: Forest Green - Doğal ve Organik */
+[data-theme="forest-green"] {
+  --primary-color: #10b981;
+  --secondary-color: #059669;
+  --accent-color: #34d399;
+  --background-primary: #0f172a;
+  --background-secondary: #1e293b;
+  --background-tertiary: rgba(6,23,42,.7);
+  --text-primary: #f8fafc;
+  --text-secondary: #e2e8f0;
+  --text-muted: #cbd5e1;
+  --border-color: rgba(255,255,255,.08);
+  --border-hover: rgba(255,255,255,.18);
+  --shadow-color: rgba(16,185,129,.25);
+  --gradient-primary: linear-gradient(90deg, #10b981, #059669);
+  --gradient-secondary: linear-gradient(135deg, rgba(16,185,129,.25), rgba(5,150,105,.2));
+  --ring-brand: rgba(16, 185, 129, 0.35);
+  
+  /* Forest Green Animasyonları - Doğal ve Organik */
+  --animation-duration: 0.6s;
+  --animation-ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --hover-scale: 1.08;
+  --hover-rotate: 3deg;
+  --hover-translate: -6px;
+  --pulse-scale: 1.08;
+  --bounce-height: 15px;
+  --glow-intensity: 0.4;
+  --ripple-size: 30px;
+  
+  /* Forest Green Özel Animasyonlar */
+  --float-distance: 12px;
+  --shake-intensity: 4px;
+  --morph-duration: 1.8s;
+  --wave-speed: 4s;
+  --particle-count: 6;
+  --magnetic-strength: 0.4;
+  --elastic-bounce: 0.3;
+  --neon-glow: 0.4;
+  --hologram-opacity: 0.25;
+  --crystal-rotation: 12deg;
+}
+
+/* Tema 3: Sunset Orange - Enerjik ve Dinamik */
+[data-theme="sunset-orange"] {
+  --primary-color: #f97316;
+  --secondary-color: #ea580c;
+  --accent-color: #fb923c;
+  --background-primary: #1c1917;
+  --background-secondary: #292524;
+  --background-tertiary: rgba(28,25,23,.7);
+  --text-primary: #fafaf9;
+  --text-secondary: #f5f5f4;
+  --text-muted: #d6d3d1;
+  --border-color: rgba(255,255,255,.08);
+  --border-hover: rgba(255,255,255,.18);
+  --shadow-color: rgba(249,115,22,.25);
+  --gradient-primary: linear-gradient(90deg, #f97316, #ea580c);
+  --gradient-secondary: linear-gradient(135deg, rgba(249,115,22,.25), rgba(234,88,12,.2));
+  --ring-brand: rgba(249, 115, 22, 0.35);
+  
+  /* Sunset Orange Animasyonları - Enerjik ve Dinamik */
+  --animation-duration: 0.2s;
+  --animation-ease: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  --hover-scale: 1.15;
+  --hover-rotate: 5deg;
+  --hover-translate: -8px;
+  --pulse-scale: 1.12;
+  --bounce-height: 20px;
+  --glow-intensity: 0.5;
+  --ripple-size: 35px;
+  
+  /* Sunset Orange Özel Animasyonlar */
+  --float-distance: 15px;
+  --shake-intensity: 8px;
+  --morph-duration: 0.6s;
+  --wave-speed: 1.5s;
+  --particle-count: 8;
+  --magnetic-strength: 0.6;
+  --elastic-bounce: 0.5;
+  --neon-glow: 0.8;
+  --hologram-opacity: 0.4;
+  --crystal-rotation: 25deg;
+}
+
+/* Tema 4: Royal Purple - Asil ve Zarif */
+[data-theme="royal-purple"] {
+  --primary-color: #8b5cf6;
+  --secondary-color: #7c3aed;
+  --accent-color: #a78bfa;
+  --background-primary: #1e1b4b;
+  --background-secondary: #312e81;
+  --background-tertiary: rgba(30,27,75,.7);
+  --text-primary: #faf5ff;
+  --text-secondary: #f3e8ff;
+  --text-muted: #ddd6fe;
+  --border-color: rgba(255,255,255,.08);
+  --border-hover: rgba(255,255,255,.18);
+  --shadow-color: rgba(139,92,246,.25);
+  --gradient-primary: linear-gradient(90deg, #8b5cf6, #7c3aed);
+  --gradient-secondary: linear-gradient(135deg, rgba(139,92,246,.25), rgba(124,58,237,.2));
+  --ring-brand: rgba(139, 92, 246, 0.35);
+  
+  /* Royal Purple Animasyonları - Asil ve Zarif */
+  --animation-duration: 0.8s;
+  --animation-ease: cubic-bezier(0.19, 1, 0.22, 1);
+  --hover-scale: 1.03;
+  --hover-rotate: 0deg;
+  --hover-translate: -3px;
+  --pulse-scale: 1.04;
+  --bounce-height: 6px;
+  --glow-intensity: 0.35;
+  --ripple-size: 22px;
+  
+  /* Royal Purple Özel Animasyonlar */
+  --float-distance: 6px;
+  --shake-intensity: 1px;
+  --morph-duration: 2.5s;
+  --wave-speed: 6s;
+  --particle-count: 4;
+  --magnetic-strength: 0.1;
+  --elastic-bounce: 0.05;
+  --neon-glow: 0.6;
+  --hologram-opacity: 0.35;
+  --crystal-rotation: 5deg;
+}
+
+/* Tema 5: Midnight Dark - Minimalist ve Keskin */
+[data-theme="midnight-dark"] {
+  --primary-color: #6366f1;
+  --secondary-color: #4f46e5;
+  --accent-color: #818cf8;
+  --background-primary: #0a0a0a;
+  --background-secondary: #1a1a1a;
+  --background-tertiary: rgba(10,10,10,.7);
+  --text-primary: #ffffff;
+  --text-secondary: #f3f4f6;
+  --text-muted: #d1d5db;
+  --border-color: rgba(255,255,255,.1);
+  --border-hover: rgba(255,255,255,.2);
+  --shadow-color: rgba(99,102,241,.25);
+  --gradient-primary: linear-gradient(90deg, #6366f1, #4f46e5);
+  --gradient-secondary: linear-gradient(135deg, rgba(99,102,241,.25), rgba(79,70,229,.2));
+  --ring-brand: rgba(99, 102, 241, 0.35);
+  
+  /* Midnight Dark Animasyonları - Minimalist ve Keskin */
+  --animation-duration: 0.15s;
+  --animation-ease: cubic-bezier(0.4, 0, 0.6, 1);
+  --hover-scale: 1.01;
+  --hover-rotate: 0deg;
+  --hover-translate: -1px;
+  --pulse-scale: 1.02;
+  --bounce-height: 3px;
+  --glow-intensity: 0.2;
+  --ripple-size: 15px;
+  
+  /* Midnight Dark Özel Animasyonlar */
+  --float-distance: 2px;
+  --shake-intensity: 0.5px;
+  --morph-duration: 0.3s;
+  --wave-speed: 1s;
+  --particle-count: 2;
+  --magnetic-strength: 0.05;
+  --elastic-bounce: 0.02;
+  --neon-glow: 0.2;
+  --hologram-opacity: 0.1;
+  --crystal-rotation: 2deg;
+}
+
+/* Tema değiştirme geçiş animasyonu */
+* {
+  transition: background-color var(--animation-duration) var(--animation-ease), 
+              border-color var(--animation-duration) var(--animation-ease), 
+              color var(--animation-duration) var(--animation-ease),
+              transform var(--animation-duration) var(--animation-ease),
+              box-shadow var(--animation-duration) var(--animation-ease);
+}
+
+/* Tema seçici modal */
+.theme-selector {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  backdrop-filter: blur(8px);
+}
+
+.theme-selector.active {
+  display: flex;
+}
+
+.theme-modal {
+  background: var(--background-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 1rem;
+  padding: 2rem;
+  max-width: 500px;
+  width: 90%;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+}
+
+/* Mobilde modalın ekrana sığması için uyarlamalar */
+@media (max-width: 640px) {
+  .theme-selector { padding: 1rem; }
+  .theme-modal {
+    padding: 1rem;
+    width: 100%;
+    max-width: 480px;
+    max-height: 88vh;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    border-radius: .875rem;
+  }
+  .theme-title { font-size: 1.25rem; margin-bottom: 1rem; }
+  .theme-grid { grid-template-columns: 1fr; gap: .75rem; margin-bottom: 1rem; }
+  .theme-option { padding: .75rem; }
+  .theme-preview { height: 60px; margin-bottom: .5rem; }
+}
+
+/* Dokunmatik cihazlarda hover kaynaklı taşmaları önle */
+@media (hover: none) {
+  .theme-option:hover { transform: none; box-shadow: none; }
+}
+
+.theme-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.theme-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.theme-option {
+  padding: 1rem;
+  border: 2px solid var(--border-color);
+  border-radius: 0.75rem;
+  background: var(--background-tertiary);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.theme-option:hover {
+  border-color: var(--primary-color);
+  transform: translateY(var(--hover-translate)) scale(var(--hover-scale)) rotate(var(--hover-rotate));
+  box-shadow: 0 4px 20px var(--shadow-color);
+}
+
+.theme-option.active {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px var(--ring-brand);
+  background: var(--background-secondary);
+}
+
+.theme-preview {
+  width: 100%;
+  height: 80px;
+  border-radius: 0.5rem;
+  margin-bottom: 0.75rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.theme-preview::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--gradient-secondary);
+}
+
+/* Tema önizleme renkleri */
+.theme-option[data-theme="ocean-blue"] .theme-preview::before {
+  background: linear-gradient(135deg, rgba(47,137,255,.25), rgba(168,85,247,.2));
+}
+
+.theme-option[data-theme="forest-green"] .theme-preview::before {
+  background: linear-gradient(135deg, rgba(16,185,129,.25), rgba(5,150,105,.2));
+}
+
+.theme-option[data-theme="sunset-orange"] .theme-preview::before {
+  background: linear-gradient(135deg, rgba(249,115,22,.25), rgba(234,88,12,.2));
+}
+
+.theme-option[data-theme="royal-purple"] .theme-preview::before {
+  background: linear-gradient(135deg, rgba(139,92,246,.25), rgba(124,58,237,.2));
+}
+
+.theme-option[data-theme="midnight-dark"] .theme-preview::before {
+  background: linear-gradient(135deg, rgba(99,102,241,.25), rgba(79,70,229,.2));
+}
+
+/* Tema seçeneklerinin hover efektleri */
+.theme-option[data-theme="ocean-blue"]:hover {
+  border-color: #2f89ff;
+  box-shadow: 0 4px 20px rgba(47,137,255,.25);
+}
+
+.theme-option[data-theme="forest-green"]:hover {
+  border-color: #10b981;
+  box-shadow: 0 4px 20px rgba(16,185,129,.25);
+}
+
+.theme-option[data-theme="sunset-orange"]:hover {
+  border-color: #f97316;
+  box-shadow: 0 4px 20px rgba(249,115,22,.25);
+}
+
+.theme-option[data-theme="royal-purple"]:hover {
+  border-color: #8b5cf6;
+  box-shadow: 0 4px 20px rgba(139,92,246,.25);
+}
+
+.theme-option[data-theme="midnight-dark"]:hover {
+  border-color: #6366f1;
+  box-shadow: 0 4px 20px rgba(99,102,241,.25);
+}
+
+/* Tema seçeneklerinin aktif durumları */
+.theme-option[data-theme="ocean-blue"].active {
+  border-color: #2f89ff;
+  box-shadow: 0 0 0 3px rgba(47,137,255,.35);
+  background: rgba(47,137,255,.1);
+}
+
+.theme-option[data-theme="forest-green"].active {
+  border-color: #10b981;
+  box-shadow: 0 0 0 3px rgba(16,185,129,.35);
+  background: rgba(16,185,129,.1);
+}
+
+.theme-option[data-theme="sunset-orange"].active {
+  border-color: #f97316;
+  box-shadow: 0 0 0 3px rgba(249,115,22,.35);
+  background: rgba(249,115,22,.1);
+}
+
+.theme-option[data-theme="royal-purple"].active {
+  border-color: #8b5cf6;
+  box-shadow: 0 0 0 3px rgba(139,92,246,.35);
+  background: rgba(139,92,246,.1);
+}
+
+.theme-option[data-theme="midnight-dark"].active {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99,102,241,.35);
+  background: rgba(99,102,241,.1);
+}
+
+.theme-name {
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
+}
+
+.theme-description {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
+.theme-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.theme-close:hover {
+  background: var(--background-tertiary);
+  color: var(--text-primary);
+}
+
+/* Tema değiştirme butonu */
+.theme-toggle {
+  position: relative; /* header içinde normal akış */
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--gradient-primary);
+  border: none;
+  color: var(--background-primary);
+  font-size: 1.2rem;
+  cursor: pointer;
+  box-shadow: 0 4px 16px var(--shadow-color);
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.theme-toggle:hover {
+  transform: scale(var(--hover-scale)) rotate(var(--hover-rotate));
+  box-shadow: 0 12px 40px var(--shadow-color);
+}
+
+/* ===== MEVCUT CSS ===== */
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body { position: relative; }
+
+/* Scrollbar gizleme (isteğe bağlı) */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: linear-gradient(180deg, var(--primary-color)77, var(--secondary-color)77); border-radius: 999px; }
+
+/* Seçim rengi */
+::selection { background: var(--shadow-color); }
+
+/* Basit yardımcı sınıflar */
+.section { padding: 5rem 0; }
+.section-container { max-width: 80rem; margin: 0 auto; padding: 0 1.5rem; }
+.section-title { font-size: clamp(1.75rem, 1.1rem + 2vw, 2.25rem); font-weight: 800; letter-spacing: -0.02em; }
+.section-subtitle { margin-top: .75rem; color: var(--text-muted); }
+
+.btn-primary {
+  display: inline-flex; align-items: center; gap:.5rem; padding:.7rem 1rem; border-radius:.9rem;
+  background: var(--gradient-primary); color: var(--background-primary); font-weight: 700;
+  box-shadow: 0 6px 24px var(--shadow-color);
+  transition: transform .2s ease, box-shadow .2s ease, filter .2s ease;
+}
+.btn-primary:hover { 
+  transform: translateY(var(--hover-translate)) scale(var(--hover-scale)) rotate(var(--hover-rotate)); 
+  filter: brightness(1.05); 
+  box-shadow: 0 10px 32px var(--shadow-color); 
+}
+.btn-primary:active { transform: translateY(0); }
+
+.btn-ghost {
+  display:inline-flex; align-items:center; gap:.5rem; padding:.7rem 1rem; border-radius:.9rem;
+  background: rgba(255,255,255,.06); color: var(--text-secondary); border: 1px solid var(--border-color);
+  transition: background .2s ease, transform .2s ease;
+}
+.btn-ghost:hover { 
+  background: rgba(255,255,255,.12); 
+  transform: translateY(var(--hover-translate)) scale(var(--hover-scale)) rotate(var(--hover-rotate)); 
+}
+
+.nav-link { color: var(--text-muted); transition: color .2s ease; }
+.nav-link:hover { color: var(--text-secondary); }
+
+.avatar {
+  width: 36px; height: 36px; border-radius: 999px; border: 2px solid rgba(255,255,255,.14);
+  background: linear-gradient(120deg, var(--primary-color), var(--secondary-color), var(--accent-color)); background-size: 200% 200%;
+  animation: gradient-move 6s ease infinite;
+}
+
+.card-demo {
+  border-radius: 1rem; border: 1px solid var(--border-color);
+  background: radial-gradient(80% 100% at 50% 0%, var(--shadow-color), var(--background-primary));
+}
+
+.feature-card { padding: 1.25rem; border-radius: 1.1rem; border: 1px solid var(--border-color); background: var(--background-tertiary); backdrop-filter: blur(8px); }
+.feature-icon { font-size: 1.5rem; }
+.feature-title { margin-top:.6rem; font-weight: 700; }
+.feature-text { margin-top:.35rem; color: var(--text-muted); }
+
+.template-card { overflow: hidden; border-radius: 1.1rem; border: 1px solid var(--border-color); background: var(--background-tertiary); }
+.template-thumb { height: 9rem; background: var(--gradient-secondary); position: relative; overflow: hidden; }
+.template-body { padding-bottom: 1rem; }
+.template-actions { padding-bottom: .25rem; }
+.template-thumb::before,
+.template-thumb::after { z-index: 0; pointer-events: none; }
+.templates-grid { align-items: stretch; row-gap: 3rem; }
+@media (max-width: 640px) {
+  .templates-grid { row-gap: 3.75rem; }
+  .template-thumb { height: 8.5rem; }
+  .template-actions { padding-bottom: .5rem; }
+}
+.templates-grid > .template-card { height: 100%; }
+.template-card { display: flex; flex-direction: column; position: relative; z-index: 0; }
+.template-thumb { flex: 0 0 auto; }
+.template-body { flex: 1 1 auto; display: flex; flex-direction: column; position: relative; z-index: 1; }
+.template-actions { margin-top: auto; position: relative; z-index: 2; }
+.template-card:hover, .template-card:focus-within { z-index: 10; }
+
+/* Tema pseudo overlay'leri içerik altında kalsın */
+[data-theme="forest-green"] .template-card::after { z-index: 0; pointer-events: none; }
+[data-theme="royal-purple"] .template-card::before { z-index: 0; pointer-events: none; }
+.template-thumb.complex::before,
+.template-thumb.complex::after { content:''; position:absolute; inset:auto; border-radius: 999px; filter: blur(30px); opacity:.7; }
+.template-thumb.complex::before { width: 180px; height: 180px; left:-20px; top:-30px; background: radial-gradient(closest-side, var(--primary-color), transparent); }
+.template-thumb.complex::after { width: 220px; height: 220px; right:-40px; bottom:-40px; background: radial-gradient(closest-side, var(--secondary-color), transparent); }
+.template-thumb.eticaret { background-image: linear-gradient(135deg, rgba(34,197,94,.22), rgba(59,130,246,.22)); }
+.template-thumb.portfolyo { background-image: linear-gradient(135deg, rgba(6,182,212,.22), rgba(147,51,234,.22)); }
+.template-thumb.saas { background-image: linear-gradient(135deg, rgba(99,102,241,.22), rgba(16,185,129,.22)); }
+.template-thumb.blog { background-image: linear-gradient(135deg, rgba(168,85,247,.22), rgba(14,165,233,.22)); }
+.template-body { padding: 1rem; }
+.template-head { display:flex; align-items:center; justify-content:space-between; gap:.5rem; }
+.badge { font-size:.7rem; padding:.25rem .5rem; border-radius:.6rem; background: rgba(255,255,255,.08); border:1px solid var(--border-color); color:var(--text-secondary); }
+.template-badges { margin-top:.6rem; display:flex; flex-wrap:wrap; gap:.4rem; color:var(--text-muted); }
+.template-badges > span { font-size:.75rem; padding:.25rem .5rem; border-radius:.5rem; background: rgba(255,255,255,.05); border:1px solid var(--border-color); }
+.template-actions { margin-top:.8rem; display:flex; gap:.5rem; }
+
+.price-card { padding: 1.25rem; border-radius: 1.1rem; border: 1px solid var(--border-color); background: var(--background-tertiary); }
+.price-card.featured { box-shadow: 0 0 0 1px var(--ring-brand), 0 20px 60px rgba(47,137,255,.18); }
+.price-title { font-weight: 800; }
+.price-value { margin-top:.3rem; font-size: 1.7rem; font-weight: 800; background: var(--gradient-primary); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.price-list { margin-top: .8rem; color: var(--text-muted); display: grid; gap:.4rem; }
+
+.testimonial { padding: 1.25rem; border-radius: 1.1rem; border: 1px solid var(--border-color); background: var(--background-tertiary); }
+.testimonial blockquote { color: var(--text-secondary); }
+.testimonial figcaption { margin-top:.5rem; color: var(--text-muted); }
+
+.form-field { display: grid; gap:.35rem; }
+.form-field > span { font-size: .875rem; color: var(--text-muted); }
+.form-field input, .form-field select, .form-field textarea {
+  background: rgba(255,255,255,.04); border: 1px solid var(--border-color); border-radius:.75rem; padding:.7rem .9rem; color: var(--text-secondary);
+}
+.form-field input:focus, .form-field select:focus, .form-field textarea:focus {
+  outline: none; box-shadow: 0 0 0 3px var(--ring-brand); border-color: var(--border-hover);
+}
+
+/* Animasyon yardımcıları */
+.reveal { opacity: 0; transform: translateY(20px); }
+.reveal.is-visible { opacity: 1; transform: none; }
+.fade-up {}
+.slide-left { transform: translateX(24px); }
+.slide-right { transform: translateX(-24px); }
+.zoom-in { transform: scale(.95); }
+.rotate-in { transform: rotate(-2deg) scale(.98); }
+.tilt { transform: perspective(800px) rotateX(6deg) rotateY(-6deg); transform-style: preserve-3d; }
+
+/* JS kapalıysa içerikler gizlenmesin */
+html.no-js .reveal { opacity: 1 !important; transform: none !important; }
+
+.parallax-y { will-change: transform; }
+
+.shadow-glow { box-shadow: 0 0 0 1px rgba(255,255,255,.06), 0 20px 60px rgba(47,137,255,.16); }
+
+/* Filtre pill butonlar */
+.filter-bar { }
+.pill { padding:.45rem .85rem; border-radius:999px; border:1px solid var(--border-color); background: rgba(255,255,255,.04); color:var(--text-secondary); transition:all .2s ease; }
+.pill:hover { background: rgba(255,255,255,.1); }
+.pill.is-active { background: var(--gradient-primary); color:var(--background-primary); box-shadow: 0 6px 24px var(--shadow-color); }
+
+/* Tema Bazlı Animasyonlar */
+
+/* Ocean Blue - Yumuşak ve Akışkan */
+[data-theme="ocean-blue"] .animate-slow-pulse {
+  animation: ocean-pulse 6s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+@keyframes ocean-pulse {
+  0%, 100% { transform: scale(1); opacity: 0.8; }
+  50% { transform: scale(1.03); opacity: 1; }
+}
+
+/* Forest Green - Doğal ve Organik */
+[data-theme="forest-green"] .animate-slow-pulse {
+  animation: forest-breathe 8s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
+}
+
+@keyframes forest-breathe {
+  0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.9; }
+  25% { transform: scale(1.08) rotate(1deg); opacity: 1; }
+  50% { transform: scale(1.05) rotate(-1deg); opacity: 0.95; }
+  75% { transform: scale(1.08) rotate(1deg); opacity: 1; }
+}
+
+/* Sunset Orange - Enerjik ve Dinamik */
+[data-theme="sunset-orange"] .animate-slow-pulse {
+  animation: sunset-bounce 3s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
+}
+
+@keyframes sunset-bounce {
+  0%, 100% { transform: scale(1) translateY(0); opacity: 0.9; }
+  25% { transform: scale(1.12) translateY(-10px); opacity: 1; }
+  50% { transform: scale(1.08) translateY(-5px); opacity: 0.95; }
+  75% { transform: scale(1.12) translateY(-10px); opacity: 1; }
+}
+
+/* Royal Purple - Asil ve Zarif */
+[data-theme="royal-purple"] .animate-slow-pulse {
+  animation: royal-float 10s cubic-bezier(0.19, 1, 0.22, 1) infinite;
+}
+
+@keyframes royal-float {
+  0%, 100% { transform: scale(1) translateY(0); opacity: 0.85; }
+  33% { transform: scale(1.04) translateY(-3px); opacity: 1; }
+  66% { transform: scale(1.02) translateY(-1px); opacity: 0.95; }
+}
+
+/* Midnight Dark - Minimalist ve Keskin */
+[data-theme="midnight-dark"] .animate-slow-pulse {
+  animation: midnight-fade 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes midnight-fade {
+  0%, 100% { transform: scale(1); opacity: 0.7; }
+  50% { transform: scale(1.02); opacity: 1; }
+}
+
+/* Genel Animasyonlar */
+@keyframes gradient-move { 
+  0%, 100% { background-position: 0% 50%; } 
+  50% { background-position: 100% 50%; } 
+}
+
+/* Tema Bazlı Hover Efektleri */
+[data-theme="ocean-blue"] .btn-primary:hover,
+[data-theme="ocean-blue"] .btn-ghost:hover {
+  animation: ocean-ripple 0.6s ease-out;
+}
+
+[data-theme="forest-green"] .btn-primary:hover,
+[data-theme="forest-green"] .btn-ghost:hover {
+  animation: forest-grow 0.6s ease-out;
+}
+
+[data-theme="sunset-orange"] .btn-primary:hover,
+[data-theme="sunset-orange"] .btn-ghost:hover {
+  animation: sunset-shake 0.3s ease-out;
+}
+
+[data-theme="royal-purple"] .btn-primary:hover,
+[data-theme="royal-purple"] .btn-ghost:hover {
+  animation: royal-glow 0.8s ease-out;
+}
+
+[data-theme="midnight-dark"] .btn-primary:hover,
+[data-theme="midnight-dark"] .btn-ghost:hover {
+  animation: midnight-sharp 0.15s ease-out;
+}
+
+/* Hover Animasyon Keyframes */
+@keyframes ocean-ripple {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(var(--hover-scale)); }
+}
+
+@keyframes forest-grow {
+  0% { transform: scale(1) rotate(0deg); }
+  50% { transform: scale(1.1) rotate(2deg); }
+  100% { transform: scale(var(--hover-scale)) rotate(var(--hover-rotate)); }
+}
+
+@keyframes sunset-shake {
+  0%, 100% { transform: translateX(0) scale(1); }
+  25% { transform: translateX(-2px) scale(1.1); }
+  75% { transform: translateX(2px) scale(1.1); }
+}
+
+@keyframes royal-glow {
+  0% { box-shadow: 0 0 0 0 var(--primary-color); }
+  50% { box-shadow: 0 0 20px 10px var(--primary-color); }
+  100% { box-shadow: 0 0 0 0 var(--primary-color); }
+}
+
+@keyframes midnight-sharp {
+  0% { transform: scale(1); }
+  100% { transform: scale(var(--hover-scale)); }
+}
+
+/* Tema Bazlı Card Animasyonları */
+[data-theme="ocean-blue"] .template-card:hover {
+  animation: ocean-card-float 0.4s ease-out;
+}
+
+[data-theme="forest-green"] .template-card:hover {
+  animation: forest-card-grow 0.6s ease-out;
+}
+
+[data-theme="sunset-orange"] .template-card:hover {
+  animation: sunset-card-bounce 0.3s ease-out;
+}
+
+[data-theme="royal-purple"] .template-card:hover {
+  animation: royal-card-glow 0.8s ease-out;
+}
+
+[data-theme="midnight-dark"] .template-card:hover {
+  animation: midnight-card-sharp 0.15s ease-out;
+}
+
+@keyframes ocean-card-float {
+  0% { transform: translateY(0) scale(1); }
+  100% { transform: translateY(var(--hover-translate)) scale(var(--hover-scale)); }
+}
+
+@keyframes forest-card-grow {
+  0% { transform: scale(1) rotate(0deg); }
+  100% { transform: scale(var(--hover-scale)) rotate(var(--hover-rotate)); }
+}
+
+@keyframes sunset-card-bounce {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-10px) scale(1.05); }
+}
+
+@keyframes royal-card-glow {
+  0% { box-shadow: 0 4px 20px var(--shadow-color); }
+  50% { box-shadow: 0 8px 40px var(--primary-color); }
+  100% { box-shadow: 0 4px 20px var(--shadow-color); }
+}
+
+@keyframes midnight-card-sharp {
+  0% { transform: scale(1); }
+  100% { transform: scale(var(--hover-scale)); }
+}
+
+/* ===== YENİ TEMA BAZLI ANİMASYONLAR ===== */
+
+/* Ocean Blue - Dalga ve Akışkan Efektler */
+[data-theme="ocean-blue"] .feature-card {
+  animation: ocean-wave var(--wave-speed) ease-in-out infinite;
+}
+
+[data-theme="ocean-blue"] .btn-primary::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), 
+              rgba(47,137,255,0.3) 0%, transparent 50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+[data-theme="ocean-blue"] .btn-primary:hover::before {
+  opacity: 1;
+}
+
+@keyframes ocean-wave {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  25% { transform: translateY(var(--float-distance)) rotate(1deg); }
+  50% { transform: translateY(0) rotate(0deg); }
+  75% { transform: translateY(calc(var(--float-distance) * -0.5)) rotate(-1deg); }
+}
+
+/* Forest Green - Organik Büyüme ve Nefes Alma */
+[data-theme="forest-green"] .feature-card {
+  animation: forest-grow var(--morph-duration) ease-in-out infinite;
+}
+
+[data-theme="forest-green"] .template-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent 30%, rgba(16,185,129,0.1) 50%, transparent 70%);
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+}
+
+[data-theme="forest-green"] .template-card:hover::after {
+  transform: translateX(100%);
+}
+
+@keyframes forest-grow {
+  0%, 100% { 
+    transform: scale(1) rotate(0deg); 
+    border-radius: 1.1rem;
+  }
+  50% { 
+    transform: scale(1.02) rotate(0.5deg); 
+    border-radius: 1.3rem;
+  }
+}
+
+/* Sunset Orange - Enerjik Parçacık Efektleri */
+[data-theme="sunset-orange"] .feature-card {
+  animation: sunset-particles var(--wave-speed) ease-in-out infinite;
+}
+
+[data-theme="sunset-orange"] .btn-primary {
+  position: relative;
+  overflow: hidden;
+}
+
+[data-theme="sunset-orange"] .btn-primary::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: radial-gradient(circle, rgba(249,115,22,0.8) 0%, transparent 70%);
+  transform: translate(-50%, -50%);
+  transition: all 0.3s ease;
+}
+
+[data-theme="sunset-orange"] .btn-primary:hover::after {
+  width: 200px;
+  height: 200px;
+}
+
+@keyframes sunset-particles {
+  0%, 100% { 
+    transform: translateY(0) scale(1); 
+    box-shadow: 0 0 0 0 rgba(249,115,22,0.4);
+  }
+  25% { 
+    transform: translateY(calc(var(--float-distance) * -0.5)) scale(1.05); 
+    box-shadow: 0 0 20px 5px rgba(249,115,22,0.6);
+  }
+  50% { 
+    transform: translateY(calc(var(--float-distance) * -1)) scale(1.1); 
+    box-shadow: 0 0 30px 10px rgba(249,115,22,0.8);
+  }
+  75% { 
+    transform: translateY(calc(var(--float-distance) * -0.5)) scale(1.05); 
+    box-shadow: 0 0 20px 5px rgba(249,115,22,0.6);
+  }
+}
+
+/* Royal Purple - Holografik ve Asil Efektler */
+[data-theme="royal-purple"] .feature-card {
+  animation: royal-hologram var(--morph-duration) ease-in-out infinite;
+}
+
+[data-theme="royal-purple"] .template-card {
+  position: relative;
+}
+
+[data-theme="royal-purple"] .template-card::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(45deg, 
+              transparent 0%, 
+              rgba(139,92,246,0.3) 25%, 
+              transparent 50%, 
+              rgba(139,92,246,0.3) 75%, 
+              transparent 100%);
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+  z-index: -1;
+}
+
+[data-theme="royal-purple"] .template-card:hover::before {
+  opacity: 1;
+  animation: royal-border-flow 2s linear infinite;
+}
+
+@keyframes royal-hologram {
+  0%, 100% { 
+    transform: translateY(0) rotateY(0deg); 
+    filter: hue-rotate(0deg);
+  }
+  33% { 
+    transform: translateY(calc(var(--float-distance) * 0.3)) rotateY(5deg); 
+    filter: hue-rotate(10deg);
+  }
+  66% { 
+    transform: translateY(calc(var(--float-distance) * 0.6)) rotateY(-5deg); 
+    filter: hue-rotate(-10deg);
+  }
+}
+
+@keyframes royal-border-flow {
+  0% { background-position: 0% 0%; }
+  100% { background-position: 200% 200%; }
+}
+
+/* Midnight Dark - Keskin ve Minimalist Efektler */
+[data-theme="midnight-dark"] .feature-card {
+  animation: midnight-sharp var(--morph-duration) ease-in-out infinite;
+}
+
+[data-theme="midnight-dark"] .btn-primary {
+  position: relative;
+  overflow: hidden;
+}
+
+[data-theme="midnight-dark"] .btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, 
+              transparent 0%, 
+              rgba(99,102,241,0.3) 50%, 
+              transparent 100%);
+  transition: left 0.3s ease;
+}
+
+[data-theme="midnight-dark"] .btn-primary:hover::before {
+  left: 100%;
+}
+
+@keyframes midnight-sharp {
+  0%, 100% { 
+    transform: scale(1) rotate(0deg); 
+    box-shadow: 0 0 0 0 rgba(99,102,241,0);
+  }
+  50% { 
+    transform: scale(1.005) rotate(0.2deg); 
+    box-shadow: 0 0 8px 1px rgba(99,102,241,0.4);
+  }
+}
+
+/* ===== TEMA BAZLI ÖZEL ANİMASYON SINIFLARI ===== */
+
+/* Ocean Blue - Dalga Efektleri */
+[data-theme="ocean-blue"] .ocean-float {
+  animation: ocean-float var(--wave-speed) ease-in-out infinite;
+}
+
+[data-theme="ocean-blue"] .ocean-ripple {
+  position: relative;
+  overflow: hidden;
+}
+
+[data-theme="ocean-blue"] .ocean-ripple::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: radial-gradient(circle, rgba(47,137,255,0.4) 0%, transparent 70%);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.6s ease;
+}
+
+[data-theme="ocean-blue"] .ocean-ripple:hover::after {
+  width: 300px;
+  height: 300px;
+}
+
+@keyframes ocean-float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(var(--float-distance)) rotate(1deg); }
+}
+
+/* Forest Green - Organik Efektler */
+[data-theme="forest-green"] .forest-breathe {
+  animation: forest-breathe var(--morph-duration) ease-in-out infinite;
+}
+
+[data-theme="forest-green"] .forest-glow {
+  position: relative;
+}
+
+[data-theme="forest-green"] .forest-glow::before {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  background: linear-gradient(45deg, 
+              rgba(16,185,129,0.3), 
+              rgba(5,150,105,0.3), 
+              rgba(16,185,129,0.3));
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: -1;
+}
+
+[data-theme="forest-green"] .forest-glow:hover::before {
+  opacity: 1;
+  animation: forest-glow-pulse 1s ease-in-out infinite;
+}
+
+@keyframes forest-breathe {
+  0%, 100% { 
+    transform: scale(1) rotate(0deg); 
+    filter: brightness(1);
+  }
+  50% { 
+    transform: scale(1.03) rotate(1deg); 
+    filter: brightness(1.1);
+  }
+}
+
+@keyframes forest-glow-pulse {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.6; }
+}
+
+/* Sunset Orange - Enerjik Efektler */
+[data-theme="sunset-orange"] .sunset-bounce {
+  animation: sunset-bounce var(--wave-speed) ease-in-out infinite;
+}
+
+[data-theme="sunset-orange"] .sunset-shake {
+  animation: sunset-shake var(--shake-intensity) ease-in-out infinite;
+}
+
+[data-theme="sunset-orange"] .sunset-neon {
+  position: relative;
+}
+
+[data-theme="sunset-orange"] .sunset-neon::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(45deg, 
+              rgba(249,115,22,0.8), 
+              rgba(234,88,12,0.8), 
+              rgba(249,115,22,0.8));
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+  filter: blur(4px);
+}
+
+[data-theme="sunset-orange"] .sunset-neon:hover::before {
+  opacity: 1;
+}
+
+@keyframes sunset-bounce {
+  0%, 100% { transform: translateY(0) scale(1); }
+  25% { transform: translateY(calc(var(--float-distance) * -0.5)) scale(1.05); }
+  50% { transform: translateY(calc(var(--float-distance) * -1)) scale(1.1); }
+  75% { transform: translateY(calc(var(--float-distance) * -0.5)) scale(1.05); }
+}
+
+@keyframes sunset-shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(calc(var(--shake-intensity) * -1)); }
+  75% { transform: translateX(var(--shake-intensity)); }
+}
+
+/* Royal Purple - Holografik Efektler */
+[data-theme="royal-purple"] .royal-float {
+  animation: royal-float var(--morph-duration) ease-in-out infinite;
+}
+
+[data-theme="royal-purple"] .royal-crystal {
+  position: relative;
+  transform-style: preserve-3d;
+}
+
+[data-theme="royal-purple"] .royal-crystal::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, 
+              rgba(139,92,246,0.2) 0%, 
+              rgba(124,58,237,0.2) 50%, 
+              rgba(139,92,246,0.2) 100%);
+  border-radius: inherit;
+  transform: rotateX(var(--crystal-rotation)) rotateY(var(--crystal-rotation));
+  transition: transform 0.8s ease;
+}
+
+[data-theme="royal-purple"] .royal-crystal:hover::before {
+  transform: rotateX(calc(var(--crystal-rotation) * 2)) rotateY(calc(var(--crystal-rotation) * 2));
+}
+
+@keyframes royal-float {
+  0%, 100% { 
+    transform: translateY(0) rotateY(0deg); 
+    filter: hue-rotate(0deg) brightness(1);
+  }
+  33% { 
+    transform: translateY(calc(var(--float-distance) * 0.3)) rotateY(3deg); 
+    filter: hue-rotate(5deg) brightness(1.05);
+  }
+  66% { 
+    transform: translateY(calc(var(--float-distance) * 0.6)) rotateY(-3deg); 
+    filter: hue-rotate(-5deg) brightness(1.1);
+  }
+}
+
+/* Midnight Dark - Keskin Efektler */
+[data-theme="midnight-dark"] .midnight-sharp {
+  animation: midnight-sharp var(--morph-duration) ease-in-out infinite;
+}
+
+[data-theme="midnight-dark"] .midnight-line {
+  position: relative;
+  overflow: hidden;
+}
+
+[data-theme="midnight-dark"] .midnight-line::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, 
+              transparent 0%, 
+              rgba(99,102,241,0.8) 50%, 
+              transparent 100%);
+  transition: left 0.3s ease;
+}
+
+[data-theme="midnight-dark"] .midnight-line:hover::before {
+  left: 100%;
+}
+
+@keyframes midnight-sharp {
+  0%, 100% { 
+    transform: scale(1) rotate(0deg); 
+    box-shadow: 0 0 0 0 rgba(99,102,241,0);
+  }
+  50% { 
+    transform: scale(1.005) rotate(0.2deg); 
+    box-shadow: 0 0 8px 1px rgba(99,102,241,0.4);
+  }
+}
+
+/* ===== TEMA BAZLI ARKAPLAN ANİMASYONLARI ===== */
+
+/* Ocean Blue - Dalga Arkaplanı */
+[data-theme="ocean-blue"] .bg-animation {
+  position: relative;
+  overflow: hidden;
+}
+
+[data-theme="ocean-blue"] .bg-animation::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(47,137,255,0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(168,85,247,0.1) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(34,211,238,0.05) 0%, transparent 50%);
+  animation: ocean-bg-flow 10s ease-in-out infinite;
+}
+
+@keyframes ocean-bg-flow {
+  0%, 100% { transform: scale(1) rotate(0deg); }
+  50% { transform: scale(1.1) rotate(180deg); }
+}
+
+/* Forest Green - Organik Arkaplan */
+[data-theme="forest-green"] .bg-animation::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 30% 70%, rgba(16,185,129,0.1) 0%, transparent 50%),
+    radial-gradient(circle at 70% 30%, rgba(5,150,105,0.1) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(52,211,153,0.05) 0%, transparent 50%);
+  animation: forest-bg-grow 15s ease-in-out infinite;
+}
+
+@keyframes forest-bg-grow {
+  0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.5; }
+  50% { transform: scale(1.2) rotate(90deg); opacity: 1; }
+}
+
+/* Sunset Orange - Enerjik Arkaplan */
+[data-theme="sunset-orange"] .bg-animation::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 25% 75%, rgba(249,115,22,0.15) 0%, transparent 50%),
+    radial-gradient(circle at 75% 25%, rgba(234,88,12,0.15) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(251,146,60,0.1) 0%, transparent 50%);
+  animation: sunset-bg-pulse 5s ease-in-out infinite;
+}
+
+@keyframes sunset-bg-pulse {
+  0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.3; }
+  25% { transform: scale(1.1) rotate(45deg); opacity: 0.6; }
+  50% { transform: scale(1.2) rotate(90deg); opacity: 0.8; }
+  75% { transform: scale(1.1) rotate(135deg); opacity: 0.6; }
+}
+
+/* Royal Purple - Holografik Arkaplan */
+[data-theme="royal-purple"] .bg-animation::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(139,92,246,0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(124,58,237,0.1) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(167,139,250,0.05) 0%, transparent 50%);
+  animation: royal-bg-hologram 20s ease-in-out infinite;
+}
+
+@keyframes royal-bg-hologram {
+  0%, 100% { transform: scale(1) rotate(0deg) hue-rotate(0deg); }
+  33% { transform: scale(1.05) rotate(120deg) hue-rotate(30deg); }
+  66% { transform: scale(1.1) rotate(240deg) hue-rotate(60deg); }
+}
+
+/* Midnight Dark - Minimalist Arkaplan */
+[data-theme="midnight-dark"] .bg-animation::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 30% 70%, rgba(99,102,241,0.05) 0%, transparent 50%),
+    radial-gradient(circle at 70% 30%, rgba(79,70,229,0.05) 0%, transparent 50%);
+  animation: midnight-bg-fade 8s ease-in-out infinite;
+}
+
+@keyframes midnight-bg-fade {
+  0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.2; }
+  50% { transform: scale(1.02) rotate(180deg); opacity: 0.4; }
+}
+
+/* ===== MOCKUP İÇERİKLERİ ===== */
+
+/* Mockup Genel Stiller */
+.mockup-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 10px;
+  color: var(--text-primary);
+}
+
+.mockup-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.mockup-nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+}
+
+.mockup-logo {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.mockup-menu {
+  display: flex;
+  gap: 3px;
+  margin-left: auto;
+}
+
+.mockup-menu span {
+  width: 3px;
+  height: 3px;
+  background: var(--text-secondary);
+  border-radius: 50%;
+}
+
+.mockup-search, .mockup-cart {
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+/* Kurumsal Mockup */
+.mockup-hero {
+  text-align: center;
+  padding: 16px 8px;
+}
+
+.mockup-title {
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 4px;
+  color: var(--primary-color);
+}
+
+.mockup-subtitle {
+  font-size: 9px;
+  opacity: 0.7;
+}
+
+.mockup-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.mockup-card {
+  height: 20px;
+  background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+  border-radius: 4px;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+/* E-Ticaret Mockup */
+.mockup-products {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.mockup-product {
+  text-align: center;
+  padding: 6px;
+  background: rgba(255,255,255,0.03);
+  border-radius: 6px;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.mockup-product-img {
+  width: 100%;
+  height: 16px;
+  background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+  border-radius: 3px;
+  margin-bottom: 4px;
+}
+
+.mockup-product-title {
+  font-size: 8px;
+  font-weight: 500;
+  margin-bottom: 2px;
+}
+
+.mockup-product-price {
+  font-size: 7px;
+  color: var(--accent-color);
+  font-weight: 600;
+}
+
+/* Portfolyo Mockup */
+.mockup-portfolio {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px;
+  margin-top: 8px;
+}
+
+.mockup-portfolio-item {
+  position: relative;
+  height: 32px;
+  border-radius: 4px;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+}
+
+.mockup-portfolio-img {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, rgba(255,255,255,0.2), rgba(255,255,255,0.1));
+}
+
+.mockup-portfolio-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0,0,0,0.7);
+  padding: 3px;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+}
+
+.mockup-portfolio-item:hover .mockup-portfolio-overlay {
+  transform: translateY(0);
+}
+
+.mockup-portfolio-title {
+  font-size: 7px;
+  font-weight: 600;
+  margin-bottom: 1px;
+}
+
+.mockup-portfolio-cat {
+  font-size: 6px;
+  opacity: 0.8;
+}
+
+/* SaaS Mockup */
+.mockup-dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.mockup-chart {
+  display: flex;
+  align-items: end;
+  gap: 4px;
+  height: 24px;
+  padding: 4px;
+  background: rgba(255,255,255,0.03);
+  border-radius: 4px;
+}
+
+.mockup-chart-bar {
+  flex: 1;
+  background: linear-gradient(to top, var(--primary-color), var(--accent-color));
+  border-radius: 2px 2px 0 0;
+  min-height: 4px;
+}
+
+.mockup-stats {
+  display: flex;
+  justify-content: space-around;
+  gap: 8px;
+}
+
+.mockup-stat {
+  text-align: center;
+  padding: 4px 6px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 4px;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.mockup-stat-number {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--accent-color);
+  margin-bottom: 1px;
+}
+
+.mockup-stat-label {
+  font-size: 6px;
+  opacity: 0.7;
+}
+
+/* Blog Mockup */
+.mockup-blog {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.mockup-blog-post {
+  display: flex;
+  gap: 6px;
+  padding: 4px;
+  background: rgba(255,255,255,0.03);
+  border-radius: 4px;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.mockup-blog-img {
+  width: 20px;
+  height: 20px;
+  background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+
+.mockup-blog-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.mockup-blog-title {
+  font-size: 8px;
+  font-weight: 600;
+  margin-bottom: 2px;
+  color: var(--text-primary);
+}
+
+.mockup-blog-excerpt {
+  font-size: 6px;
+  opacity: 0.7;
+  margin-bottom: 3px;
+  line-height: 1.2;
+}
+
+.mockup-blog-meta {
+  display: flex;
+  gap: 6px;
+}
+
+.mockup-blog-meta span {
+  font-size: 5px;
+  opacity: 0.6;
+  background: rgba(255,255,255,0.1);
+  padding: 1px 3px;
+  border-radius: 2px;
+}
+
+/* Tema bazlı mockup renkleri */
+[data-theme="ocean-blue"] .mockup-content {
+  --mockup-primary: #2f89ff;
+  --mockup-secondary: #a855f7;
+  --mockup-accent: #22d3ee;
+}
+
+[data-theme="forest-green"] .mockup-content {
+  --mockup-primary: #10b981;
+  --mockup-secondary: #059669;
+  --mockup-accent: #34d399;
+}
+
+[data-theme="sunset-orange"] .mockup-content {
+  --mockup-primary: #f97316;
+  --mockup-secondary: #ea580c;
+  --mockup-accent: #fb923c;
+}
+
+[data-theme="royal-purple"] .mockup-content {
+  --mockup-primary: #8b5cf6;
+  --mockup-secondary: #7c3aed;
+  --mockup-accent: #a78bfa;
+}
+
+[data-theme="midnight-dark"] .mockup-content {
+  --mockup-primary: #6366f1;
+  --mockup-secondary: #4f46e5;
+  --mockup-accent: #818cf8;
+}
+
+/* ===== HERO KARTLARI ===== */
+
+/* Hero kart genel stilleri */
+.hero-card-content {
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 12px;
+  text-align: center;
+  background: linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.1);
+  position: relative;
+  overflow: hidden;
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+  visibility: visible !important;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 10;
+}
+
+/* Hero metrik grid düzenleyici: kutuların içine düzgün sığdırır */
+.hero-metrics-grid {
+  grid-auto-rows: 1fr;
+}
+
+.hero-metrics-grid .card-demo {
+  min-height: 0;
+}
+
+.hero-metrics-grid .hero-card-content {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  padding: 16px;
+  gap: 6px;
+}
+
+.hero-metrics-grid .hero-card-icon { margin-bottom: 4px; }
+.hero-metrics-grid .hero-card-title { margin-bottom: 6px; font-size: 11px; }
+.hero-metrics-grid .hero-card-progress { height: 6px; margin-bottom: 6px; }
+.hero-metrics-grid .hero-card-value { font-size: 13px; }
+
+.hero-card-content::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent, rgba(255,255,255,0.03), transparent);
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+}
+
+.hero-card-content:hover::before {
+  transform: translateX(100%);
+}
+
+.hero-card-icon {
+  font-size: 24px;
+  margin-bottom: 8px;
+  filter: drop-shadow(0 0 8px rgba(255,255,255,0.3));
+  animation: hero-icon-pulse 2s ease-in-out infinite;
+}
+
+.hero-card-title {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.hero-card-progress {
+  width: 100%;
+  height: 4px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 2px;
+  margin-bottom: 6px;
+  overflow: hidden;
+  position: relative;
+}
+
+.hero-card-bar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+  border-radius: 2px;
+  position: relative;
+  animation: hero-bar-fill 2s ease-out forwards;
+  transform-origin: left;
+  width: 100% !important;
+  transform: scaleX(1) !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  z-index: 5;
+}
+
+.hero-card-bar::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+  animation: hero-bar-shine 1.5s ease-in-out infinite;
+}
+
+.hero-card-value {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--accent-color);
+  text-shadow: 0 0 8px rgba(34, 211, 238, 0.5);
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: block !important;
+}
+
+/* Hero kart animasyonları */
+@keyframes hero-icon-pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.1); opacity: 0.8; }
+}
+
+@keyframes hero-bar-fill {
+  0% { transform: scaleX(0); }
+  100% { transform: scaleX(1); }
+}
+
+@keyframes hero-bar-shine {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+/* Tema bazlı hero kart renkleri */
+[data-theme="ocean-blue"] .hero-card-content {
+  --hero-primary: #2f89ff;
+  --hero-accent: #22d3ee;
+}
+
+[data-theme="forest-green"] .hero-card-content {
+  --hero-primary: #10b981;
+  --hero-accent: #34d399;
+}
+
+[data-theme="sunset-orange"] .hero-card-content {
+  --hero-primary: #f97316;
+  --hero-accent: #fb923c;
+}
+
+[data-theme="royal-purple"] .hero-card-content {
+  --hero-primary: #8b5cf6;
+  --hero-accent: #a78bfa;
+}
+
+[data-theme="midnight-dark"] .hero-card-content {
+  --hero-primary: #6366f1;
+  --hero-accent: #818cf8;
+}
+
+/* Hero kart hover efektleri */
+.hero-card-content:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+  border-color: rgba(255,255,255,0.2);
+}
+
+.hero-card-content:hover .hero-card-icon {
+  animation: hero-icon-bounce 0.6s ease;
+}
+
+.hero-card-content:hover .hero-card-bar {
+  animation: hero-bar-glow 1s ease-in-out infinite;
+}
+
+@keyframes hero-icon-bounce {
+  0%, 20%, 53%, 80%, 100% { transform: translate3d(0,0,0); }
+  40%, 43% { transform: translate3d(0,-8px,0); }
+  70% { transform: translate3d(0,-4px,0); }
+  90% { transform: translate3d(0,-2px,0); }
+}
+
+@keyframes hero-bar-glow {
+  0%, 100% { box-shadow: 0 0 5px rgba(34, 211, 238, 0.3); }
+  50% { box-shadow: 0 0 15px rgba(34, 211, 238, 0.6); }
+}
+
+/* Responsive hero kartlar */
+@media (max-width: 768px) {
+  .hero-card-icon {
+    font-size: 20px;
+  }
+  
+  .hero-card-title {
+    font-size: 10px;
+  }
+  
+  .hero-card-value {
+    font-size: 12px;
+  }
+}
+
+

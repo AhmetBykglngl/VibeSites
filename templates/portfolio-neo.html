@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Portfolyo Neo — Önizleme</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://unpkg.com/@studio-freight/lenis@1.0.33/bundled/lenis.min.js"></script>
+</head>
+<body class="min-h-screen bg-slate-950 text-slate-100 font-[Inter] antialiased">
+  <!-- Header -->
+  <header class="sticky top-0 z-50 border-b border-white/10 bg-slate-900/80 backdrop-blur">
+    <div class="mx-auto max-w-7xl px-6 py-4">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-cyan-500 to-purple-600"></div>
+          <span class="text-lg font-semibold tracking-tight">Portfolyo Neo</span>
+        </div>
+        <nav class="hidden md:flex items-center gap-8 text-sm">
+          <a href="#home" class="hover:text-white transition-colors">Ana Sayfa</a>
+          <a href="#works" class="hover:text-white transition-colors">İşler</a>
+          <a href="#about" class="hover:text-white transition-colors">Hakkında</a>
+          <a href="#contact" class="hover:text-white transition-colors">İletişim</a>
+          <a href="#contact" class="px-4 py-2 rounded-lg bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-medium hover:shadow-lg transition-all">Proje Başlat</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative overflow-hidden py-20">
+    <div class="absolute inset-0 bg-gradient-to-br from-cyan-500/10 via-purple-500/5 to-transparent"></div>
+    <div class="relative mx-auto max-w-7xl px-6">
+      <div class="text-center">
+        <h1 class="text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
+          Yaratıcı İşler
+          <span class="bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">Portfolyosu</span>
+        </h1>
+        <p class="text-xl text-slate-300 max-w-3xl mx-auto mb-8">
+          Yaratıcı ızgara, hover efektleri ve akışkan geçişler ile güçlü vitrin. Her proje benzersiz bir hikaye anlatır.
+        </p>
+        <div class="flex flex-wrap justify-center gap-4">
+          <button class="px-8 py-4 rounded-xl bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-semibold hover:shadow-xl transition-all transform hover:-translate-y-1">
+            İşleri Keşfet
+          </button>
+          <button class="px-8 py-4 rounded-xl border border-white/20 text-white font-semibold hover:bg-white/5 transition-all">
+            Hakkımda
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Filters Section -->
+  <section class="py-8 border-b border-white/10">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="flex flex-wrap items-center gap-4">
+        <span class="text-sm font-medium text-slate-300">Kategoriler:</span>
+        <button class="px-4 py-2 rounded-lg bg-gradient-to-r from-cyan-500 to-purple-600 text-white text-sm font-medium">Tümü</button>
+        <button class="px-4 py-2 rounded-lg bg-slate-800 text-slate-300 text-sm font-medium hover:bg-slate-700 transition-colors">Web Tasarım</button>
+        <button class="px-4 py-2 rounded-lg bg-slate-800 text-slate-300 text-sm font-medium hover:bg-slate-700 transition-colors">Mobil Uygulama</button>
+        <button class="px-4 py-2 rounded-lg bg-slate-800 text-slate-300 text-sm font-medium hover:bg-slate-700 transition-colors">Marka Kimliği</button>
+        <button class="px-4 py-2 rounded-lg bg-slate-800 text-slate-300 text-sm font-medium hover:bg-slate-700 transition-colors">UI/UX</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio Grid -->
+  <section id="works" class="py-16">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Project 1 -->
+        <div class="group relative overflow-hidden rounded-2xl bg-slate-800/50 border border-white/10 hover:border-cyan-500/30 transition-all duration-500 hover:transform hover:-translate-y-2">
+          <div class="aspect-[4/3] bg-gradient-to-br from-cyan-500/20 to-purple-500/20 relative overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-br from-cyan-500/30 to-purple-500/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div class="absolute inset-0 flex items-center justify-center">
+              <span class="text-6xl">🌐</span>
+            </div>
+            <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+              <div class="text-center">
+                <button class="px-6 py-3 bg-white text-slate-900 rounded-lg font-semibold hover:bg-slate-100 transition-colors">
+                  Detayları Gör
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2">E-Ticaret Platformu</h3>
+            <p class="text-slate-300 text-sm mb-4">Modern ve kullanıcı dostu e-ticaret deneyimi</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1 bg-cyan-500/20 text-cyan-300 text-xs rounded-full">React</span>
+              <span class="px-3 py-1 bg-purple-500/20 text-purple-300 text-xs rounded-full">Node.js</span>
+              <span class="px-3 py-1 bg-green-500/20 text-green-300 text-xs rounded-full">MongoDB</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="group relative overflow-hidden rounded-2xl bg-slate-800/50 border border-white/10 hover:border-cyan-500/30 transition-all duration-500 hover:transform hover:-translate-y-2">
+          <div class="aspect-[4/3] bg-gradient-to-br from-purple-500/20 to-pink-500/20 relative overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-br from-purple-500/30 to-pink-500/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div class="absolute inset-0 flex items-center justify-center">
+              <span class="text-6xl">📱</span>
+            </div>
+            <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+              <div class="text-center">
+                <button class="px-6 py-3 bg-white text-slate-900 rounded-lg font-semibold hover:bg-slate-100 transition-colors">
+                  Detayları Gör
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2">Fitness Uygulaması</h3>
+            <p class="text-slate-300 text-sm mb-4">Kişiselleştirilmiş antrenman ve takip sistemi</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1 bg-purple-500/20 text-purple-300 text-xs rounded-full">Flutter</span>
+              <span class="px-3 py-1 bg-blue-500/20 text-blue-300 text-xs rounded-full">Firebase</span>
+              <span class="px-3 py-1 bg-orange-500/20 text-orange-300 text-xs rounded-full">Dart</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="group relative overflow-hidden rounded-2xl bg-slate-800/50 border border-white/10 hover:border-cyan-500/30 transition-all duration-500 hover:transform hover:-translate-y-2">
+          <div class="aspect-[4/3] bg-gradient-to-br from-green-500/20 to-blue-500/20 relative overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-br from-green-500/30 to-blue-500/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div class="absolute inset-0 flex items-center justify-center">
+              <span class="text-6xl">🎨</span>
+            </div>
+            <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+              <div class="text-center">
+                <button class="px-6 py-3 bg-white text-slate-900 rounded-lg font-semibold hover:bg-slate-100 transition-colors">
+                  Detayları Gör
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2">Marka Kimliği Tasarımı</h3>
+            <p class="text-slate-300 text-sm mb-4">Kurumsal kimlik ve logo tasarım projesi</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1 bg-green-500/20 text-green-300 text-xs rounded-full">Figma</span>
+              <span class="px-3 py-1 bg-red-500/20 text-red-300 text-xs rounded-full">Illustrator</span>
+              <span class="px-3 py-1 bg-yellow-500/20 text-yellow-300 text-xs rounded-full">Photoshop</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="group relative overflow-hidden rounded-2xl bg-slate-800/50 border border-white/10 hover:border-cyan-500/30 transition-all duration-500 hover:transform hover:-translate-y-2">
+          <div class="aspect-[4/3] bg-gradient-to-br from-orange-500/20 to-red-500/20 relative overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-br from-orange-500/30 to-red-500/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div class="absolute inset-0 flex items-center justify-center">
+              <span class="text-6xl">💼</span>
+            </div>
+            <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+              <div class="text-center">
+                <button class="px-6 py-3 bg-white text-slate-900 rounded-lg font-semibold hover:bg-slate-100 transition-colors">
+                  Detayları Gör
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2">Kurumsal Web Sitesi</h3>
+            <p class="text-slate-300 text-sm mb-4">Profesyonel kurumsal web sitesi tasarımı</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1 bg-orange-500/20 text-orange-300 text-xs rounded-full">Vue.js</span>
+              <span class="px-3 py-1 bg-blue-500/20 text-blue-300 text-xs rounded-full">Laravel</span>
+              <span class="px-3 py-1 bg-green-500/20 text-green-300 text-xs rounded-full">MySQL</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 5 -->
+        <div class="group relative overflow-hidden rounded-2xl bg-slate-800/50 border border-white/10 hover:border-cyan-500/30 transition-all duration-500 hover:transform hover:-translate-y-2">
+          <div class="aspect-[4/3] bg-gradient-to-br from-blue-500/20 to-cyan-500/20 relative overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-br from-blue-500/30 to-cyan-500/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div class="absolute inset-0 flex items-center justify-center">
+              <span class="text-6xl">🎮</span>
+            </div>
+            <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+              <div class="text-center">
+                <button class="px-6 py-3 bg-white text-slate-900 rounded-lg font-semibold hover:bg-slate-100 transition-colors">
+                  Detayları Gör
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2">Mobil Oyun</h3>
+            <p class="text-slate-300 text-sm mb-4">Unity ile geliştirilmiş mobil oyun projesi</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1 bg-blue-500/20 text-blue-300 text-xs rounded-full">Unity</span>
+              <span class="px-3 py-1 bg-purple-500/20 text-purple-300 text-xs rounded-full">C#</span>
+              <span class="px-3 py-1 bg-green-500/20 text-green-300 text-xs rounded-full">Blender</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 6 -->
+        <div class="group relative overflow-hidden rounded-2xl bg-slate-800/50 border border-white/10 hover:border-cyan-500/30 transition-all duration-500 hover:transform hover:-translate-y-2">
+          <div class="aspect-[4/3] bg-gradient-to-br from-pink-500/20 to-purple-500/20 relative overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-br from-pink-500/30 to-purple-500/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div class="absolute inset-0 flex items-center justify-center">
+              <span class="text-6xl">📊</span>
+            </div>
+            <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+              <div class="text-center">
+                <button class="px-6 py-3 bg-white text-slate-900 rounded-lg font-semibold hover:bg-slate-100 transition-colors">
+                  Detayları Gör
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2">Dashboard Uygulaması</h3>
+            <p class="text-slate-300 text-sm mb-4">Veri analizi ve raporlama dashboard'u</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1 bg-pink-500/20 text-pink-300 text-xs rounded-full">React</span>
+              <span class="px-3 py-1 bg-blue-500/20 text-blue-300 text-xs rounded-full">D3.js</span>
+              <span class="px-3 py-1 bg-green-500/20 text-green-300 text-xs rounded-full">Node.js</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-20 bg-slate-900/50">
+    <div class="mx-auto max-w-4xl px-6">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-bold mb-4">Hakkımda</h2>
+        <p class="text-xl text-slate-300">Yaratıcı çözümler üreten tutkulu bir tasarımcı ve geliştirici</p>
+      </div>
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <p class="text-slate-300 mb-6">
+            5+ yıllık deneyimimle, kullanıcı deneyimi odaklı dijital çözümler geliştiriyorum. 
+            Her proje benzersiz bir hikaye ve her tasarım anlamlı bir deneyim yaratır.
+          </p>
+          <div class="space-y-4">
+            <div class="flex items-center gap-3">
+              <div class="w-3 h-3 bg-cyan-500 rounded-full"></div>
+              <span class="text-slate-300">Web Tasarım & Geliştirme</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-3 h-3 bg-purple-500 rounded-full"></div>
+              <span class="text-slate-300">Mobil Uygulama Geliştirme</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+              <span class="text-slate-300">UI/UX Tasarım</span>
+            </div>
+          </div>
+        </div>
+        <div class="bg-slate-800/50 rounded-2xl border border-white/10 p-8">
+          <h3 class="text-2xl font-bold mb-6">Yetenekler</h3>
+          <div class="space-y-4">
+            <div>
+              <div class="flex justify-between mb-2">
+                <span class="text-sm text-slate-300">React/Vue.js</span>
+                <span class="text-sm text-slate-300">95%</span>
+              </div>
+              <div class="w-full bg-slate-700 rounded-full h-2">
+                <div class="bg-gradient-to-r from-cyan-500 to-purple-600 h-2 rounded-full" style="width: 95%"></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between mb-2">
+                <span class="text-sm text-slate-300">UI/UX Tasarım</span>
+                <span class="text-sm text-slate-300">90%</span>
+              </div>
+              <div class="w-full bg-slate-700 rounded-full h-2">
+                <div class="bg-gradient-to-r from-purple-500 to-pink-600 h-2 rounded-full" style="width: 90%"></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between mb-2">
+                <span class="text-sm text-slate-300">Mobil Geliştirme</span>
+                <span class="text-sm text-slate-300">85%</span>
+              </div>
+              <div class="w-full bg-slate-700 rounded-full h-2">
+                <div class="bg-gradient-to-r from-green-500 to-blue-600 h-2 rounded-full" style="width: 85%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Smooth scroll
+    const lenis = new Lenis({ duration: 1.2, smoothWheel: true });
+    function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
+    requestAnimationFrame(raf);
+
+    // GSAP animations
+    gsap.from("header", { y: -50, opacity: 0, duration: 1 });
+    gsap.from("h1", { y: 50, opacity: 0, duration: 1, delay: 0.2 });
+    gsap.from(".group", { y: 30, opacity: 0, duration: 0.8, delay: 0.4, stagger: 0.1 });
+  </script>
+</body>
+</html>
+
+
