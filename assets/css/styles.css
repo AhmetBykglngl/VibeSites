@@ -2266,6 +2266,24 @@ html.no-js .reveal { opacity: 1 !important; transform: none !important; }
     height: 4px; 
     margin-bottom: 4px; 
   }
+  /* Genel mobil sıkılaştırmalar */
+  .section { padding: 3.5rem 0; }
+  .btn-primary, .btn-ghost { padding: .6rem .9rem; }
+  .section-title { font-size: clamp(1.5rem, 1rem + 2.5vw, 2rem); }
+  .section-subtitle { font-size: .95rem; }
+}
+
+/* Daha küçük ekranlar için ekstra ayarlar */
+@media (max-width: 480px) {
+  .hero-metrics-grid { gap: 6px !important; }
+  .hero-metrics-grid .hero-card-title { font-size: 9px; }
+  .hero-metrics-grid .hero-card-value { font-size: 11px; }
+  .btn-primary, .btn-ghost { padding: .55rem .85rem; }
+}
+
+/* Çok dar ekranlarda hero grid tek sütun olsun */
+@media (max-width: 360px) {
+  .hero-metrics-grid { grid-template-columns: 1fr !important; }
 }
 
 
