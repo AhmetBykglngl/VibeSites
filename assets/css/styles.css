@@ -2251,4 +2251,21 @@ html.no-js .reveal { opacity: 1 !important; transform: none !important; }
   }
 }
 
+/* Mobil düzen düzeltmeleri: Hız/Güvenlik/Tasarım/Performans kartları */
+@media (max-width: 640px) {
+  /* Grid içi boşlukları küçült ve kartların kare olma zorlamasını kaldır */
+  .hero-metrics-grid { 
+    padding: 10px !important; 
+    gap: 8px !important; 
+  }
+  .hero-metrics-grid .hero-card-content { 
+    aspect-ratio: auto; 
+    padding: 12px; 
+  }
+  .hero-metrics-grid .hero-card-progress { 
+    height: 4px; 
+    margin-bottom: 4px; 
+  }
+}
+
 
