@@ -3293,3 +3293,38 @@ a:visited { text-decoration: none; }
 /* Global Link Reset */
 * { text-decoration-skip-ink: auto; }
 a { text-decoration-skip-ink: auto; }
+
+/* ... existing code ... */
+
+/* Button Text Decoration Fixes */
+.btn-primary, .btn-primary * { text-decoration: none !important; }
+.btn-ghost, .btn-ghost * { text-decoration: none !important; }
+.btn-primary:hover, .btn-primary:hover * { text-decoration: none !important; }
+.btn-ghost:hover, .btn-ghost:hover * { text-decoration: none !important; }
+.btn-primary:focus, .btn-primary:focus * { text-decoration: none !important; }
+.btn-ghost:focus, .btn-ghost:focus * { text-decoration: none !important; }
+.btn-primary:visited, .btn-primary:visited * { text-decoration: none !important; }
+.btn-ghost:visited, .btn-ghost:visited * { text-decoration: none !important; }
+
+/* All Button Elements */
+button, button * { text-decoration: none !important; }
+button:hover, button:hover * { text-decoration: none !important; }
+button:focus, button:focus * { text-decoration: none !important; }
+
+/* Link Elements Inside Buttons */
+a.btn-primary, a.btn-ghost { text-decoration: none !important; }
+a.btn-primary:hover, a.btn-ghost:hover { text-decoration: none !important; }
+a.btn-primary:focus, a.btn-ghost:focus { text-decoration: none !important; }
+a.btn-primary:visited, a.btn-ghost:visited { text-decoration: none !important; }
+
+/* Force Remove Underlines */
+.no-underline, .no-underline * { text-decoration: none !important; }
+.hover\:no-underline:hover, .hover\:no-underline:hover * { text-decoration: none !important; }
+
+/* Global Button Reset */
+.btn-primary, .btn-ghost, .btn-primary *, .btn-ghost * {
+  text-decoration: none !important;
+  text-decoration-line: none !important;
+  text-decoration-style: none !important;
+  text-decoration-color: transparent !important;
+}
