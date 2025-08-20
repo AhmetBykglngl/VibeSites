@@ -39,8 +39,39 @@
     <link rel="stylesheet" href="assets/css/styles.css" media="print" onload="this.media='all'" />
     <noscript><link rel="stylesheet" href="assets/css/styles.css" /></noscript>
 
-    <!-- Tailwind (CDN) -->
-    <script src="https://cdn.tailwindcss.com" defer></script>
+    <!-- Critical CSS (Inline) -->
+    <style>
+      /* Critical rendering path CSS */
+      body { margin: 0; font-family: Inter, system-ui, Arial, sans-serif; background: #0b1020; color: #f8fafc; }
+      .min-h-screen { min-height: 100vh; }
+      .bg-slate-950 { background-color: #0b1020; }
+      .text-slate-100 { color: #f8fafc; }
+      .antialiased { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+      .sticky { position: sticky; }
+      .top-0 { top: 0; }
+      .z-50 { z-index: 50; }
+      .backdrop-blur { backdrop-filter: blur(8px); }
+      .bg-slate-900\/60 { background-color: rgba(15, 23, 42, 0.6); }
+      .flex { display: flex; }
+      .items-center { align-items: center; }
+      .justify-between { justify-content: space-between; }
+      .px-4 { padding-left: 1rem; padding-right: 1rem; }
+      .py-3 { padding-top: 0.75rem; padding-bottom: 0.75rem; }
+      .max-w-7xl { max-width: 80rem; }
+      .mx-auto { margin-left: auto; margin-right: auto; }
+      .gap-4 { gap: 1rem; }
+      .shrink-0 { flex-shrink: 0; }
+      .hidden { display: none; }
+      .md\:flex { display: none; }
+      .md\:px-6 { padding-left: 1.5rem; padding-right: 1.5rem; }
+      .md\:py-4 { padding-top: 1rem; padding-bottom: 1rem; }
+      .sm\:inline-flex { display: none; }
+      @media (min-width: 640px) { .sm\:inline-flex { display: inline-flex; } }
+      @media (min-width: 768px) { .md\:flex { display: flex; } }
+    </style>
+
+    <!-- Tailwind (CDN) - REMOVED FOR PERFORMANCE -->
+    <!-- <script src="https://cdn.tailwindcss.com" defer></script> -->
     <script>
       tailwind.config = {
         theme: {
@@ -606,7 +637,22 @@
       </div>
     </noscript>
 
-    <!-- JS: GSAP, ScrollTrigger, Lenis -->
+    <!-- JS: Optimized Loading -->
+    <script>
+      // Preload critical resources
+      const preloadLinks = [
+        'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js',
+        'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js',
+        'https://unpkg.com/@studio-freight/lenis@1.0.33/bundled/lenis.min.js'
+      ];
+      preloadLinks.forEach(href => {
+        const link = document.createElement('link');
+        link.rel = 'preload';
+        link.as = 'script';
+        link.href = href;
+        document.head.appendChild(link);
+      });
+    </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer referrerpolicy="no-referrer"></script>
     <script src="https://unpkg.com/@studio-freight/lenis@1.0.33/bundled/lenis.min.js" defer></script>
