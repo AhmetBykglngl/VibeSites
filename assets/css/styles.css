@@ -918,6 +918,12 @@ img {
   box-shadow: 0 12px 40px var(--shadow-color);
 }
 
+/* Navbar mobil optimizasyonu */
+@media (max-width: 640px) {
+  .theme-toggle { width: 38px; height: 38px; font-size: 1rem; }
+  header nav { gap: .5rem; }
+}
+
 /* ===== MEVCUT CSS ===== */
 
 * { box-sizing: border-box; }
@@ -2259,7 +2265,7 @@ html.no-js .reveal { opacity: 1 !important; transform: none !important; }
     gap: 8px !important; 
   }
   .hero-metrics-grid .hero-card-content { 
-    aspect-ratio: auto; 
+    aspect-ratio: 1; 
     padding: 12px; 
   }
   .hero-metrics-grid .hero-card-progress { 
@@ -2281,10 +2287,7 @@ html.no-js .reveal { opacity: 1 !important; transform: none !important; }
   .btn-primary, .btn-ghost { padding: .55rem .85rem; }
 }
 
-/* Çok dar ekranlarda hero grid tek sütun olsun */
-@media (max-width: 360px) {
-  .hero-metrics-grid { grid-template-columns: 1fr !important; }
-}
+/* Çok dar ekranlarda dahi 2x2 düzen korunur (grid-cols-2 HTML sınıfı) */
 
 /* Genel mobil uyumluluk iyileştirmeleri */
 img, video, canvas, svg { max-width: 100%; height: auto; }
