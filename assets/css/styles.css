@@ -2286,4 +2286,18 @@ html.no-js .reveal { opacity: 1 !important; transform: none !important; }
   .hero-metrics-grid { grid-template-columns: 1fr !important; }
 }
 
+/* Genel mobil uyumluluk iyileştirmeleri */
+img, video, canvas, svg { max-width: 100%; height: auto; }
+
+@media (max-width: 640px) {
+  html, body { overflow-x: hidden; }
+  .section-container { padding: 0 1rem; }
+  .hero-grid { gap: 1.25rem !important; }
+  .btn-primary, .btn-ghost { font-size: .95rem; }
+}
+
+@media (max-width: 360px) {
+  .btn-primary, .btn-ghost { width: 100%; justify-content: center; }
+}
+
 
